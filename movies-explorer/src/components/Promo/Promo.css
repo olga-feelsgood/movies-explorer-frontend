@@ -1,0 +1,37 @@
+.promo {
+background-color: #073042;
+display: flex;
+box-sizing: border-box;
+padding: 75px 70px 84px;
+width: 100%;
+justify-content: space-between;
+}
+
+.promo__container {
+display: flex;
+flex-direction: column;
+}
+
+.promo__title {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  color: #FFF;
+  max-width: 640px;
+  margin: 0;
+  padding-bottom: 36px;
+}
+
+.promo__text {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #E5E5E5;
+  max-width: 310px;
+  margin: 0;
+}
+
+.promo__logo {
+width: 310px;
+height: 304px;
+}
