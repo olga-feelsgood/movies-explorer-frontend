@@ -2,7 +2,7 @@
 background-color: #073042;
 display: flex;
 box-sizing: border-box;
-padding: 75px 70px 84px;
+padding: 75px 70px 42px;
 width: 100%;
 justify-content: space-between;
 }
@@ -34,4 +34,5 @@ flex-direction: column;
 .promo__logo {
 width: 310px;
 height: 304px;
+align-self: end;
 }

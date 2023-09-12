@@ -1,0 +1,15 @@
+.navtab {
+  background-color: #073042;
+  box-sizing: border-box;
+  padding: 50px 70px 84px;
+  width: 100%;
+}
+
+.navtab__link {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFF;
+  border: 1px solid #FFF;
+  padding: 10px 20px;
+}

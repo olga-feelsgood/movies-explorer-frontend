@@ -2,13 +2,16 @@
 // import './App.css';
 import Footer from '../Footer/Footer.js';
 import Promo from '../Promo/Promo.js';
-
+import NavTab from '../NavTab/NavTab.js';
+import AboutProject from '../AboutProject/Aboutproject.js';
 
 function App() {
   return (
     <>
-    <Promo />
-    <Footer />
+      <Promo />
+      <NavTab />
+      <AboutProject />
+      <Footer />
     </>
     // <div className="App">
     //   <header className="App-header">
