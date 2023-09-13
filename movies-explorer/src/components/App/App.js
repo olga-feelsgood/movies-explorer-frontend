@@ -5,6 +5,7 @@ import Promo from '../Promo/Promo.js';
 import NavTab from '../NavTab/NavTab.js';
 import AboutProject from '../AboutProject/Aboutproject.js';
 import Techs from '../Techs/Techs.js';
+import AboutMe from '../AboutMe/Aboutme.js';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <NavTab />
       <AboutProject />
       <Techs />
+      <AboutMe />
       <Footer />
     </>
     // <div className="App">
