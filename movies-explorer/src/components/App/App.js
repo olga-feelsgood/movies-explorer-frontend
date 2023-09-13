@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer.js';
 import Promo from '../Promo/Promo.js';
 import NavTab from '../NavTab/NavTab.js';
 import AboutProject from '../AboutProject/Aboutproject.js';
+import Techs from '../Techs/Techs.js';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Promo />
       <NavTab />
       <AboutProject />
+      <Techs />
       <Footer />
     </>
     // <div className="App">
