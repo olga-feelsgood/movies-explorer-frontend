@@ -1,9 +1,6 @@
 .about-me {
-  display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 108px 70px 110px;
-  width: 100%;
+  padding: 108px 70px 98px;
 }
 
 .about-me__wrapper {
@@ -58,4 +55,5 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
+  color: black;
 }

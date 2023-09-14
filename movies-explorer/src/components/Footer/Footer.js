@@ -1,9 +1,10 @@
 import './Footer.css';
 import '../Link/Link.css';
+import '../Section/Section.css';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer section">
       <p className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</p>
       <div className="footer__container">
         <p className="footer__copyright">&copy;2023</p>

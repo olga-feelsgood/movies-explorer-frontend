@@ -1,0 +1,39 @@
+.portfolio {
+  flex-direction: column;
+  padding: 0px 70px 80px;
+}
+
+.portfolio__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  padding-bottom: 50px;
+  color: #A0A0A0;
+}
+
+.portfolio__list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.portfolio__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.portfolio__link {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+  color: black;
+  padding-bottom: 40px;
+}
+
+.portfolio__arrow {
+  padding-top: 18px;
+  padding-right: 5px;
+}

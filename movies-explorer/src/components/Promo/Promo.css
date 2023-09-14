@@ -1,9 +1,6 @@
 .promo {
   background-color: #073042;
-  display: flex;
-  box-sizing: border-box;
   padding: 75px 70px 42px;
-  width: 100%;
   justify-content: space-between;
 }
 

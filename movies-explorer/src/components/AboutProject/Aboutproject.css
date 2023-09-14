@@ -1,9 +1,6 @@
 .about-project {
-  display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   padding: 110px 70px;
-  width: 100%;
 }
 
 .about-project__wrapper {
