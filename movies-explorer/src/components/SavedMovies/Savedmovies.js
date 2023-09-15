@@ -1,13 +1,13 @@
-import './Movies.css'
+import './Savedmovies.css'
 import SearchForm from "../SearchForm/Searchform.js";
 import MoviesCardList from '../MoviesCardList/Moviescardlist.js';
 import Footer from "../Footer/Footer.js";
 
 
-function Movies() {
+function SavedMovies() {
   return (
     <>
-      <main className="movies">
+      <main className="saved-movies">
         <SearchForm />
         <MoviesCardList />
       </main>
@@ -16,4 +16,4 @@ function Movies() {
   );
 }
 
-export default Movies;
+export default SavedMovies;
