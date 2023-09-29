@@ -3,6 +3,7 @@ import Main from '../Main/Main.js';
 import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/Savedmovies.js';
 import Profile from '../Profile/Profile.js';
+import Register from '../Register/Register.js';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/movies" element={<Movies />} />
         <Route path="/saved-movies" element={<SavedMovies />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/signup" element={<Register />} />
       </Routes>
     </>
   );

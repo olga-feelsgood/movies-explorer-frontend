@@ -5,7 +5,7 @@ function Profile() {
   return (
     <>
       <main className="profile section">
-        <h2 className="profile__title">Привет, Виталий!</h2>
+        <h1 className="profile__title">Привет, Виталий!</h1>
         <form className="profile__form">
           <fieldset className="profile__fieldset">
             <label className="profile__label">Имя
@@ -17,7 +17,7 @@ function Profile() {
                 autoComplete="on"
                 minLength="2"
                 maxLength="30"
-                value="Виталий"
+                defaultValue="Виталий"
               />
             </label>
             <span className="profile__error"></span>
@@ -29,16 +29,16 @@ function Profile() {
                 type="email"
                 name="email"
                 autoComplete="on"
-                value="pochta@yandex.ru"
+                defaultValue="pochta@yandex.ru"
               />
             </label>
             <span className="profile__error">Пользователь с указанным email уже зарегистрирован</span>
           </fieldset>
-        </form>
-        <div className="profile__buttons">
+          <div className="profile__buttons">
           <button className="profile__button-edit" type="submit">Редактировать</button>
           <button className="profile__button-logout" type="submit">Выйти из аккаунта</button>
         </div>
+        </form>
       </main >
     </>
   )
