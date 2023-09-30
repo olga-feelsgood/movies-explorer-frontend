@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Register.css';
 import '../Section/Section.css';
-
+import '../Link/Link.css';
 
 function Register() {
   return (
@@ -50,7 +50,7 @@ function Register() {
           <button className="register__button" type="submit">Зарегистрироваться</button>
         </form>
         <p className="register__signin">Уже зарегистрированы?
-          <Link to='/signin' className="register__link">&nbsp;Вoйти</Link>
+          <Link to='/signin' className="register__link link">&nbsp;Вoйти</Link>
         </p>
       </main >
     </>

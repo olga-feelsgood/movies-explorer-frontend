@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Login.css';
 import '../Section/Section.css';
-
+import '../Link/Link.css';
 
 function Login() {
   return (
@@ -36,7 +36,7 @@ function Login() {
           <button className="login__button" type="submit">Войти</button>
         </form>
         <p className="login__signup">Еще не зарегистрированы?
-          <Link to='/signup' className="login__link">&nbsp;Регистрация</Link>
+          <Link to='/signup' className="login__link link">&nbsp;Регистрация</Link>
         </p>
       </main >
     </>

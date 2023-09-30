@@ -19,6 +19,10 @@
   line-height: 34px;
 }
 
+.searchform__input:focus {
+  outline: none;
+}
+
 .searchform__button {
   font-weight: 500;
   font-size: 11px;
