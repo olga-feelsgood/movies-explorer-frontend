@@ -1,0 +1,42 @@
+.navigation__menu {}
+
+.navigation__link {
+  padding-right: 16px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: black;
+}
+
+.navigation__link:last-of-type {
+  padding-right: 0;
+}
+
+.navigation__link_active {
+  font-weight: 500;
+}
+
+.navigation_color {
+  color: white;
+}
+
+.navigation__account_icon {
+  height: 10px;
+  width: 10px;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: #F9F9F9;
+}
+
+.navigation__account {
+  font-weight: 500;
+  padding: 9.5px 11px 9.5px 11px;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: black;
+  border: 2px solid #F9F9F9;
+}

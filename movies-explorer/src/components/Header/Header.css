@@ -1,0 +1,44 @@
+.header {
+  padding: 18px 70px;
+}
+
+.header__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header_color {
+  background-color: #073042;
+}
+
+.header__logo {
+  width: 38px;
+  height: 38px;
+}
+
+.header__logo:hover {
+  opacity: 0.6;
+}
+
+.header__menu {
+  padding-top: 8px;
+}
+
+.header__link-reg {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: white;
+  padding-right: 30px;
+}
+
+.header__link-login {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 8px 20px;
+  background-color: #2BE080;
+  color: black;
+}

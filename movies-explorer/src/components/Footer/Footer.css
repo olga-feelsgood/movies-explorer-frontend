@@ -1,6 +1,6 @@
 .footer {
   flex-direction: column;
-  padding: 87px 70px 20px;
+  padding: 92px 70px 20px;
 }
 
 .footer__text {
@@ -26,6 +26,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
+  letter-spacing: -0.04em;
 }
 
 .footer__links {

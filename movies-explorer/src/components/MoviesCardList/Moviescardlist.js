@@ -7,8 +7,8 @@ function MoviesCardList() {
   const location = useLocation();
 
   return (
-    <section className="movies-cardlist">
-      <ul className="movies-cardlist__list">
+    <section className='movies-cardlist'>
+      <ul className='movies-cardlist__list'>
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
@@ -26,7 +26,7 @@ function MoviesCardList() {
         <MoviesCard />
         <MoviesCard />
       </ul>
-      {location.pathname === "/movies" && <button type="button" className="movies-cardlist__button">Еще</button>}
+      {location.pathname === '/movies' && <button type='button' className='movies-cardlist__button'>Еще</button>}
     </section>
   );
 }

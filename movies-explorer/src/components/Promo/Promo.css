@@ -1,6 +1,6 @@
 .promo {
   background-color: #073042;
-  padding: 75px 70px 42px;
+  padding: 73px 70px 42px;
   justify-content: space-between;
 }
 
@@ -26,10 +26,16 @@
   color: #E5E5E5;
   max-width: 310px;
   margin: 0;
+  opacity: .5;
+}
+
+.promo__logobox {
+  width: 310px;
+  height: 304px;
 }
 
 .promo__logo {
-  width: 310px;
-  height: 304px;
-  align-self: end;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

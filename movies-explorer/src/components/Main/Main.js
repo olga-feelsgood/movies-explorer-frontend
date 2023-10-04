@@ -10,7 +10,7 @@ import Portfolio from '../Portfolio/Portfolio.js';
 function Main() {
   return (
     <>
-      <main className="main">
+      <main className='main section'>
         <Promo />
         <NavTab />
         <AboutProject />
