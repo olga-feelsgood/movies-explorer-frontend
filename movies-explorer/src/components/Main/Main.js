@@ -6,10 +6,12 @@ import AboutProject from '../AboutProject/Aboutproject.js';
 import Techs from '../Techs/Techs.js';
 import AboutMe from '../AboutMe/Aboutme.js';
 import Portfolio from '../Portfolio/Portfolio.js';
+import Header from '../Header/Header.js';
 
 function Main() {
   return (
     <>
+      <Header />
       <main className='main section'>
         <Promo />
         <NavTab />

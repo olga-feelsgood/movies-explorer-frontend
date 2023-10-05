@@ -6,16 +6,12 @@ import Profile from '../Profile/Profile.js';
 import Register from '../Register/Register.js';
 import Login from '../Login/Login.js';
 import NotFound from '../NotFound/Notfound.js';
-import Header from '../Header/Header.js';
-import { useState } from 'react';
+
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
   return (
     <>
-      <Header isLoggedIn={isLoggedIn}/>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/movies' element={<Movies />} />

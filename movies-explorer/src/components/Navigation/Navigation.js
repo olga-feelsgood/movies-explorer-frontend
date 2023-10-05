@@ -13,8 +13,7 @@ function Navigation() {
         <NavLink to='/movies' className={pathname !== '/' ? 'navigation__link navigation__link_active link' : 'navigation__link navigation__link_active link navigation_color'}>Фильмы</NavLink>
         <NavLink to='/saved-movies' className={pathname !== '/' ? 'navigation__link link' : 'navigation__link navigation__link_active link navigation_color'}>Сохраненные фильмы</NavLink>
       </nav>
-      <NavLink to='/profile' className='navigation__account link'>Аккаунт 123</NavLink>
-      {/* <NavLink to='/profile' className='navigation__link navigation__account link'>Аккаунт <img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink> */}
+      <NavLink to='/profile' className='navigation__account link'>Аккаунт<img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink>
 
       {/* //   <nav className='navigation__menu'>
     //     <ul className='navigation__list'>
