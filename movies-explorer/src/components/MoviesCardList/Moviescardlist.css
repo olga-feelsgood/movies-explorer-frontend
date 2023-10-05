@@ -1,7 +1,7 @@
 .movies-cardlist {
   display: flex;
   flex-direction: column;
-  padding: 70px 70px 99px;
+  padding: 70px 70px 63px;
 }
 
 .movies-cardlist__list {

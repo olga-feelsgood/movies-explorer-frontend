@@ -1,9 +1,11 @@
 import './Profile.css';
 import '../Section/Section.css';
+import Header from '../Header/Header.js';
 
 function Profile() {
   return (
     <>
+      <Header />
       <main className='profile section'>
         <h1 className='profile__title'>Привет, Виталий!</h1>
         <form className='profile__form'>
@@ -35,9 +37,9 @@ function Profile() {
             <span className='profile__error'>Пользователь с указанным email уже зарегистрирован</span>
           </fieldset>
           <div className='profile__buttons'>
-          <button className='profile__button-edit' type='submit'>Редактировать</button>
-          <button className='profile__button-logout' type='submit'>Выйти из аккаунта</button>
-        </div>
+            <button className='profile__button-edit' type='submit'>Редактировать</button>
+            <button className='profile__button-logout' type='submit'>Выйти из аккаунта</button>
+          </div>
         </form>
       </main >
     </>
