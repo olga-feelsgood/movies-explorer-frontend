@@ -46,4 +46,147 @@
   display: flex;
   align-items: center;
   max-height: 32px;
+  max-width: 100px;
+}
+
+/* Бургер-кнопка */
+.navigation__burger-button {
+  display: none;
+  all: unset;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  height: 44px;
+  width: 44px;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.navigation__burger-button_opened {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navigation__burger-button span {
+  display: block;
+  background-color: black;
+  position: absolute;
+  display: block;
+  width: 28px;
+  height: 3px;
+  z-index: 3;
+  transition: opacity .1s, transfrom .5s;
+}
+
+.navigation__burger-button span:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.navigation__burger-button span:nth-child(3) {
+  transform: translateY(10px);
+}
+
+/* Крестик */
+
+.navigation__wrapper .navigation__burger-button span:nth-child(1) {
+  transform: translateY(0px) rotate(45deg);
+}
+
+.navigation__wrapper .navigation__burger-button span:nth-child(2) {
+  opacity: 0;
+}
+
+.navigation__wrapper .navigation__burger-button span:nth-child(3) {
+  transform: translateY(0px) rotate(-45deg);
+}
+
+/* Бургер */
+.navigation__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
+}
+
+.navigation__burger {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  box-sizing: border-box;
+  max-width: 520px;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation__burger_hidden {
+  display: none;
+}
+
+.navigation__list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+  padding-top: 160px;
+  padding-right: 38px
+}
+
+.navigation__item {
+  padding-bottom: 28px;
+}
+
+.navigation__item:last-of-type {
+  padding-bottom: 0;
+}
+
+.navigation__burger-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: black;
+  padding-bottom: 4px;
+}
+
+.navigation__profile {
+  padding: 0px 3px 0px 5px;
+  background-color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  color: black;
+  border: 2px solid #F9F9F9;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  max-height: 32px;
+  max-width: 100px;
+  margin-bottom: 90px;
+}
+
+@media (max-width: 768px) {
+  .navigation__menu {
+    display: none;
+  }
+
+  .navigation__account {
+    display: none;
+  }
+
+  .navigation__burger-button {
+    display: flex;
+  }
 }

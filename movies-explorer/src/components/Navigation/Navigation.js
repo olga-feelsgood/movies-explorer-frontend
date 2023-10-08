@@ -1,11 +1,14 @@
 import './Navigation.css';
 import '../Link/Link.css';
+import '../Header/Header.css';
+import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import Icon from '../../images/icon-profile.svg';
 
 function Navigation() {
 
   let { pathname } = useLocation();
+  const [isBurgerOpen, setIsBurgerOpen] = useState(true);
 
   return (
     <>
@@ -15,19 +18,28 @@ function Navigation() {
       </nav>
       <NavLink to='/profile' className='navigation__account link'>Аккаунт<img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink>
 
-      {/* //   <nav className='navigation__menu'>
-    //     <ul className='navigation__list'>
-    //       <li className='navigation__item'>
-    //         <NavLink to='/movies' className='navigation__link link'>Фильмы</NavLink>
-    //       </li>
-    //     </ul>
 
-
-    //     <NavLink to='/saved-movies' className='header__link link'>Сохраненные фильмы</NavLink>
-    //   </div>
-    //   <NavLink to='/profile' className='header__link header__account link'>Аккаунт</NavLink>
-    // </nav > */}
-
+      <div className={isBurgerOpen && 'navigation__wrapper'}>
+        <button className={isBurgerOpen ? 'navigation__burger-button navigation__burger-button_opened' : 'navigation__burger-button'}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav className={!isBurgerOpen ? 'navigation__burger_hidden' : 'navigation__burger'}>
+          <ul className='navigation__list'>
+            <li className='navigation__item'>
+              <NavLink to='/' className='navigation__burger-link link'>Главная</NavLink>
+            </li>
+            <li className='navigation__item'>
+              <NavLink to='/movies' className='navigation__burger-link link'>Фильмы</NavLink>
+            </li>
+            <li className='navigation__item'>
+              <NavLink to='/saved-movies' className='navigation__burger-link link'>Сохраненные фильмы</NavLink>
+            </li>
+          </ul>
+          <NavLink to='/profile' className='navigation__profile link'>Аккаунт<img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink>
+        </nav >
+      </div>
     </>)
 }
 
