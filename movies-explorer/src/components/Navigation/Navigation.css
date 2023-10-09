@@ -57,8 +57,9 @@
   position: relative;
   top: 0px;
   right: 0px;
-  height: 44px;
+  height: 40px;
   width: 44px;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 4;
@@ -196,5 +197,16 @@
   }
   .navigation__burger-menu {
     display: flex;
+  }
+}
+
+@media (max-width: 320px) {
+  .navigation__burger-button {
+    width: 40px;;
+  }
+
+  .navigation__burger-button span {
+    width: 22px;
+    height: 2.5px;
   }
 }

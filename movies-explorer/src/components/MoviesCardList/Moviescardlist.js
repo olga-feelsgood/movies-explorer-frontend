@@ -17,14 +17,14 @@ function MoviesCardList() {
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
+        {/* <MoviesCard />
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
+        <MoviesCard /> */}
       </ul>
       {location.pathname === '/movies' && <button type='button' className='movies-cardlist__button'>Еще</button>}
     </section>

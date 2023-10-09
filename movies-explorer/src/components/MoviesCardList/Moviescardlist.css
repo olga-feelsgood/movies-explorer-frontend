@@ -32,3 +32,26 @@
   cursor: pointer;
   background-color: #F8F8F8;
 }
+
+@media(max-width: 768px) {
+  .movies-cardlist {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 80px;
+  }
+
+  .movies-cardlist__list {
+    grid-template-columns: repeat(auto-fill, minmax(339px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media(max-width: 400px) {
+  .movies-cardlist {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .movies-cardlist__list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
