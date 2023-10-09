@@ -81,3 +81,37 @@
   margin-bottom: 70px;
   color: #FF3055;
 }
+
+@media(max-width: 768px) {
+  .profile__title {
+    padding-top: 232px;
+    padding-bottom: 96px;
+  }
+
+  .profile__button-edit {
+    margin-top: 178px;
+  }
+}
+
+@media(max-width: 450px) {
+  .profile__form {
+    max-width: 260px;
+  }
+}
+
+@media(max-width: 320px) {
+  .profile__title {
+    padding: 67px 58px 80px;
+  }
+
+  .profile__button-edit {
+    margin-top: 335px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .profile__button-logout {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

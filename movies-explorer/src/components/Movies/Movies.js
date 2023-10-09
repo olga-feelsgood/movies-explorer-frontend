@@ -11,7 +11,7 @@ function Movies() {
       <Header />
       <main className='movies'>
         <SearchForm />
-        {/* <Preloader /> */}
+        <Preloader />
         <MoviesCardList />
       </main>
       <Footer />

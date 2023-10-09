@@ -80,7 +80,7 @@
 
 @media(max-width: 320px) {
   .searchform {
-    padding: 81px 14px 15px;
+    padding: 81px 14px 10px;
   }
 
   .searchform__form {
@@ -95,7 +95,7 @@
   }
 
   .searchform__container {
-justify-content: center;
+    justify-content: center;
   }
 
   .searchform__text {

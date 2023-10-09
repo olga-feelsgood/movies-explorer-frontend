@@ -84,3 +84,20 @@
     height: 190px;
   }
 }
+
+@media(max-width: 320px) {
+  .movies-card__trailer-link {
+    padding-bottom: 4px;
+  }
+
+  .movies-card__title {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+
+  .movies-card__text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

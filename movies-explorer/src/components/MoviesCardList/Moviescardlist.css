@@ -48,10 +48,16 @@
 
 @media(max-width: 400px) {
   .movies-cardlist {
+    min-height: 716px;
+  }
+
+  .movies-cardlist {
     padding-left: 10px;
     padding-right: 10px;
   }
+
   .movies-cardlist__list {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 21px;
   }
 }
