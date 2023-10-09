@@ -8,7 +8,7 @@ import Icon from '../../images/icon-profile.svg';
 function Navigation() {
 
   let { pathname } = useLocation();
-  const [isBurgerOpen, setIsBurgerOpen] = useState(true);
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   return (
     <>
@@ -17,8 +17,8 @@ function Navigation() {
         <NavLink to='/saved-movies' className={pathname !== '/' ? 'navigation__link link' : 'navigation__link navigation__link_active link navigation_color'}>Сохраненные фильмы</NavLink>
       </nav>
       <NavLink to='/profile' className='navigation__account link'>Аккаунт<img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink>
-
-
+      
+<div className='navigation__burger-menu'>
       <div className={isBurgerOpen && 'navigation__wrapper'}>
         <button className={isBurgerOpen ? 'navigation__burger-button navigation__burger-button_opened' : 'navigation__burger-button'}>
           <span></span>
@@ -39,6 +39,7 @@ function Navigation() {
           </ul>
           <NavLink to='/profile' className='navigation__profile link'>Аккаунт<img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink>
         </nav >
+      </div>
       </div>
     </>)
 }

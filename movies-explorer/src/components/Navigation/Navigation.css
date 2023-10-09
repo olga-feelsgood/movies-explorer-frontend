@@ -51,7 +51,8 @@
 
 /* Бургер-кнопка */
 .navigation__burger-button {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
   all: unset;
   position: relative;
   top: 0px;
@@ -103,6 +104,10 @@
 }
 
 /* Бургер */
+.navigation__burger-menu {
+  display: none;
+}
+
 .navigation__wrapper {
   position: fixed;
   top: 0;
@@ -187,6 +192,9 @@
   }
 
   .navigation__burger-button {
+    visibility: visible;
+  }
+  .navigation__burger-menu {
     display: flex;
   }
 }

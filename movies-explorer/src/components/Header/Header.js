@@ -10,7 +10,7 @@ function Header() {
 
   let { pathname } = useLocation();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const notLoggedInMenu = <nav className='header__menu'>
     <NavLink to='/signup' className='header__link-reg link'>Регистрация</NavLink>

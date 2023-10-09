@@ -17,6 +17,7 @@
   line-height: 58px;
   padding: 20px 0px 26px;
   letter-spacing: -0.04em;
+  text-align: center;
 }
 
 .techs__text {
@@ -54,4 +55,68 @@
   padding: 21px 0px;
   background-color: #E8E8E8;
   border-radius: 10px;
+}
+
+@media(max-width: 768px) {
+  .techs {
+    padding: 90px 50px;
+  }
+
+  .techs__subtitle {
+    padding-top: 12px;
+    padding-bottom: 22px;
+  }
+
+  .techs__text {
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 83px;
+  }
+
+  .techs__list {
+    gap: 10px;
+  }
+
+  .techs__items {
+    width: 84px;
+  }
+
+  .techs__item {
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+}
+
+@media(max-width: 320px) {
+  .techs {
+    padding: 80px 18px 70px;
+    background-color: white;
+  }
+
+  .techs__subtitle {
+    font-size: 30px;
+    line-height: 36px;
+    padding-top: 0;
+    padding-bottom: 24px;
+  }
+
+  .techs__text {
+    font-size: 11px;
+    line-height: 16px;
+    padding-bottom: 50px;
+  }
+
+  .techs__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-left: 71px;
+    margin-right: 71px;
+  }
+
+  .techs__item {
+    font-size: 12px;
+    line-height: 19px;
+  }
 }

@@ -39,3 +39,51 @@
   height: 100%;
   object-fit: contain;
 }
+
+@media(max-width: 768px) {
+  .promo {
+    padding: 138px 30px 89px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .promo__logobox {
+    padding-bottom: 48px;
+  }
+
+  .promo__container {
+    align-items: center;
+  }
+
+  .promo__title {
+    text-align: center;
+    font-size: 40px;
+    line-height: 50px;
+    padding-bottom: 22px;
+  }
+
+  .promo__text {
+    text-align: center;
+    max-width: 260px;
+  }
+}
+
+@media(max-width: 320px) {
+  .promo {
+    padding: 67px 10px 80px;
+  }
+
+  .promo__logobox {
+    width: 210px;
+    height: 206px;
+    padding-bottom: 44px;
+  }
+
+  .promo__title {
+    font-size: 30px;
+    line-height: 38px;
+    padding-bottom: 24px;
+    letter-spacing: -0.04em;
+  }
+}

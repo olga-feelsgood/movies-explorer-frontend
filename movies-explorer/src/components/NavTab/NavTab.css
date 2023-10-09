@@ -13,3 +13,26 @@
   border: 1px solid #FFF;
   padding: 10px 20px;
 }
+
+@media(max-width: 768px) {
+  .navtab {
+    padding-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .navtab__link {
+    margin: auto;
+  }
+}
+
+@media(max-width: 320px) {
+  .navtab {
+    padding-bottom: 30px;
+  }
+
+  .navtab__link {
+    padding-bottom: 9px;
+    padding-top: 9px;
+  }
+}
