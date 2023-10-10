@@ -195,6 +195,7 @@
   .navigation__burger-button {
     visibility: visible;
   }
+
   .navigation__burger-menu {
     display: flex;
   }
@@ -202,7 +203,8 @@
 
 @media (max-width: 320px) {
   .navigation__burger-button {
-    width: 40px;;
+    width: 40px;
+    ;
   }
 
   .navigation__burger-button span {

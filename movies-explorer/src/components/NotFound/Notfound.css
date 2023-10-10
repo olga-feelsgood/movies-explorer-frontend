@@ -27,3 +27,29 @@
   line-height: 17px;
   color: #3456F3;
 }
+
+@media(max-width: 768px) {
+  .notfound__title {
+    padding-top: 408px;
+  }
+}
+
+@media(max-width: 320px) {
+  .notfound__title {
+    padding-top: 329px;
+    font-size: 80px;
+    line-height: 97px;
+  }
+
+  .notfound__text {
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 10px;
+  }
+
+  .notfound__link {
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 284px;
+  }
+}

@@ -8,7 +8,7 @@ import Icon from '../../images/icon-profile.svg';
 function Navigation() {
 
   let { pathname } = useLocation();
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const [isBurgerOpen, setIsBurgerOpen] = useState(true);
 
   return (
     <>
