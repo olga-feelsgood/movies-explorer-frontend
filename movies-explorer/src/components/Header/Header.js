@@ -20,7 +20,7 @@ function Header() {
   return (
     <header className={pathname !== '/' ? 'header section' : 'header section header_color'}>
       <div className='header__container'>
-        <Link to='/'> <img classname='header__logo' src={logo} alt='логотип' /></Link>
+        <Link to='/'> <img className='header__logo' src={logo} alt='логотип' /></Link>
         {isLoggedIn ? <Navigation /> : notLoggedInMenu}
       </div>
     </header >)

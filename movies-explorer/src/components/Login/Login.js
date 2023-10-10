@@ -9,7 +9,7 @@ function Login() {
     <>
       <main className='login section'>
         <div className='login__container'>
-          <Link to='/'> <img classname='login__logo' src={logo} alt='логотип' /></Link>
+          <Link to='/'> <img className='login__logo' src={logo} alt='логотип' /></Link>
           <h1 className='login__title'>Рады видеть!</h1>
           <form className='login__form'>
             <fieldset className='login__fieldset'>

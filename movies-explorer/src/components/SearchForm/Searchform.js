@@ -11,7 +11,7 @@ function SearchForm() {
           placeholder='Фильм'
           required
           type='text'
-          minLenght='1'
+          minLength='1'
         />
         <button className='searchform__button' type='submit'>Найти</button>
       </form>

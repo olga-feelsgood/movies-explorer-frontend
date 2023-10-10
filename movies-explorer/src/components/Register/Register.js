@@ -9,7 +9,7 @@ function Register() {
     <>
       <main className='register section'>
         <div className='register__container'>
-          <Link to='/'> <img classname='register__logo' src={logo} alt='логотип' /></Link>
+          <Link to='/'> <img className='register__logo' src={logo} alt='логотип' /></Link>
           <h1 className='register__title'>Добро пожаловать!</h1>
           <form className='register__form'>
             <fieldset className='register__fieldset'>

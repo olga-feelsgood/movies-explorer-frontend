@@ -82,6 +82,10 @@
   transition: opacity .1s, transfrom .5s;
 }
 
+.navigation__burger-button_white span {
+  background-color: white;
+}
+
 .navigation__burger-button span:nth-child(1) {
   transform: translateY(-10px);
 }
@@ -164,6 +168,10 @@
   line-height: 22px;
   color: black;
   padding-bottom: 4px;
+}
+
+.navigation__burger-link_active {
+  border-bottom: 1px solid black;
 }
 
 .navigation__profile {

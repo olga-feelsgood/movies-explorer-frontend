@@ -17,6 +17,11 @@
   max-width: 640px;
   margin: 0;
   padding-bottom: 36px;
+  hyphens: none;
+}
+
+.promo__title_hyphen {
+  white-space: nowrap;
 }
 
 .promo__text {

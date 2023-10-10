@@ -30,11 +30,15 @@
   font-weight: 500;
   font-size: 11px;
   line-height: 14px;
-  padding: 0px 0px 16px;
+  padding: 0;
 }
 
 .profile__label:last-of-type {
   border-bottom: none;
+}
+
+.profile__label:hover {
+  border-bottom: 1px solid #3456F3;
 }
 
 .profile__input {
@@ -43,7 +47,7 @@
   font-size: 11px;
   line-height: 14px;
   text-align: right;
-  padding: 0;
+  padding: 0 0 16px;
 }
 
 .profile__input:focus {

@@ -32,8 +32,12 @@
   font-weight: 500;
   font-size: 10px;
   line-height: 12px;
-  padding: 0px 0px 11px;
+  padding: 0;
   margin-bottom: 7px;
+}
+
+.register__label:hover {
+  border-bottom: 1px solid #3456F3;
 }
 
 .register__input {
@@ -42,11 +46,12 @@
   font-size: 14px;
   line-height: 17px;
   text-align: left;
-  padding: 4px 0 0;
+  padding: 4px 0 11px;
 }
 
 .register__input:focus {
   outline: none;
+  border-bottom: 1px solid #3456F3;
 }
 
 .register__error {
