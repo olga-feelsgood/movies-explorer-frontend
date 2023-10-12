@@ -3,7 +3,7 @@ import FormTemplate from '../FormTemplate/Formtemplate.js';
 
 function Register() {
   return (
-    <main className='section'>
+    <main className='main'>
       <FormTemplate
         title='Добро пожаловать!'
         buttonTitle='Зарегистрироватться'

@@ -12,7 +12,7 @@ function Main() {
   return (
     <>
       <Header />
-      <main className='main section'>
+      <main className='main'>
         <Promo />
         <NavTab />
         <AboutProject />

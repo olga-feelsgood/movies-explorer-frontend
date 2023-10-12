@@ -20,7 +20,7 @@
   hyphens: none;
 }
 
-.promo__title_hyphen {
+.promo__nohyphen {
   white-space: nowrap;
 }
 

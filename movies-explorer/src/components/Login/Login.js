@@ -1,10 +1,9 @@
-import '../Section/Section.css';
 import FormTemplate from '../FormTemplate/Formtemplate.js';
 
 function Login() {
   return (
 
-    <main className='section'>
+    <main className='main'>
       <FormTemplate
         title='Рады видеть!'
         buttonTitle='Войти'

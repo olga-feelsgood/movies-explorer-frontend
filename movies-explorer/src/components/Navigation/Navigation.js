@@ -3,7 +3,7 @@ import '../Link/Link.css';
 import '../Header/Header.css';
 import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import Icon from '../../images/icon-profile.svg';
+import ProfileButton from '../ProfileButton/Profilebutton.js';
 
 function Navigation() {
 
@@ -12,37 +12,36 @@ function Navigation() {
 
   return (
     <>
-      <nav className='navigation__menu'>
-        <NavLink to='/movies' className={pathname !== '/' ? 'navigation__link navigation__link_active link' : 'navigation__link navigation__link_active link navigation_color'}>Фильмы</NavLink>
-        <NavLink to='/saved-movies' className={pathname !== '/' ? 'navigation__link link' : 'navigation__link navigation__link_active link navigation_color'}>Сохраненные фильмы</NavLink>
+      <nav className='navigation'>
+        <NavLink to='/movies' className={pathname !== '/' ? 'navigation__link navigation__link_active link' : 'navigation__link navigation__link_active link navigation__link_color_white'}>Фильмы</NavLink>
+        <NavLink to='/saved-movies' className={pathname !== '/' ? 'navigation__link link' : 'navigation__link navigation__link_active link navigation__link_color_white'}>Сохраненные фильмы</NavLink>
       </nav>
-      <NavLink to='/profile' className='navigation__account link'>Аккаунт<img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink>
+      <ProfileButton />
 
-      <div className='navigation__burger-menu'>
-        <div className={isBurgerOpen && 'navigation__wrapper'}>
-          {/* <button className={isBurgerOpen ? 'navigation__burger-button navigation__burger-button_opened' : 'navigation__burger-button'}> */}
-          <button className={isBurgerOpen ? 'navigation__burger-button navigation__burger-button_opened' :
-            (pathname !== '/' ? 'navigation__burger-button' : 'navigation__burger-button navigation__burger-button_white')}>
+      <div className='burger'>
+        <div className={isBurgerOpen && 'burger__wrapper'}>
+          <button className={isBurgerOpen ? 'burger__button burger__button_opened' :
+            (pathname !== '/' ? 'burger__button' : 'burger__button burger__button_color_white')}>
             <span></span>
             <span></span>
             <span></span>
           </button>
-          <nav className={!isBurgerOpen ? 'navigation__burger_hidden' : 'navigation__burger'}>
-            <ul className='navigation__list'>
-              <li className='navigation__item'>
-                <NavLink to='/' className={pathname === '/' ? 'navigation__burger-link navigation__burger-link_active link' :
-                  'navigation__burger-link link'}>Главная</NavLink>
+          <nav className={!isBurgerOpen ? 'burger__menu burger__menu_hidden' : 'burger__menu'}>
+            <ul className='burger__list'>
+              <li className='burger__item'>
+                <NavLink to='/' className={pathname === '/' ? 'burger__link burger__link_active link' :
+                  'burger__link link'}>Главная</NavLink>
               </li>
-              <li className='navigation__item'>
-                <NavLink to='/movies' className={pathname === '/movies' ? 'navigation__burger-link navigation__burger-link_active link' :
-                  'navigation__burger-link link'}>Фильмы</NavLink>
+              <li className='burger__item'>
+                <NavLink to='/movies' className={pathname === '/movies' ? 'burger__link burger__link_active link' :
+                  'burger__link link'}>Фильмы</NavLink>
               </li>
-              <li className='navigation__item'>
-                <NavLink to='/saved-movies' className={pathname === '/saved-movies' ? 'navigation__burger-link navigation__burger-link_active link' :
-                  'navigation__burger-link link'}>Сохраненные фильмы</NavLink>
+              <li className='burger__item'>
+                <NavLink to='/saved-movies' className={pathname === '/saved-movies' ? 'burger__link burger__link_active link' :
+                  'burger__link link'}>Сохраненные фильмы</NavLink>
               </li>
             </ul>
-            <NavLink to='/profile' className='navigation__profile link'>Аккаунт<img className='navigation__account_icon' alt='Иконка профиля' src={Icon} /></NavLink>
+            <ProfileButton />
           </nav >
         </div>
       </div>

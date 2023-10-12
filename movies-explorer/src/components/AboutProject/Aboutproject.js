@@ -21,7 +21,7 @@ function AboutProject() {
           <p className='about-project__caption'>Back-end</p>
         </div>
         <div className='about-project__time-block about-project__time-block_size_big'>
-          <p className='about-project__time about-project__time-block_color_grey'>4 недели</p>
+          <p className='about-project__time about-project__time_color_grey'>4 недели</p>
           <p className='about-project__caption'>Front-end</p>
         </div>
       </div>

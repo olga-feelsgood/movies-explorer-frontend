@@ -1,4 +1,4 @@
-.navigation__menu {
+.navigation {
   display: flex;
   align-items: center;
   margin-left: 60px;
@@ -20,38 +20,27 @@
   font-weight: 500;
 }
 
-.navigation_color {
+.navigation__link_color_white {
   color: white;
 }
 
-.navigation__account_icon {
-  height: 11px;
-  width: 11px;
-  padding: 7px;
-  border-radius: 50%;
-  background-color: #F9F9F9;
-  margin-left: 8px;
+/* Бургер */
+.burger {
+  display: none;
 }
 
-.navigation__account {
-  padding: 0px 3px 0px 5px;
-  background-color: white;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 13px;
-  color: black;
-  border: 2px solid #F9F9F9;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  max-height: 32px;
-  max-width: 100px;
+.burger__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
 }
 
 /* Бургер-кнопка */
-.navigation__burger-button {
-  /* display: none; */
+.burger__button {
   visibility: hidden;
   all: unset;
   position: relative;
@@ -65,13 +54,13 @@
   z-index: 4;
 }
 
-.navigation__burger-button_opened {
+.burger__button_opened {
   position: absolute;
   top: 15px;
   right: 15px;
 }
 
-.navigation__burger-button span {
+.burger__button span {
   display: block;
   background-color: black;
   position: absolute;
@@ -82,48 +71,34 @@
   transition: opacity .1s, transfrom .5s;
 }
 
-.navigation__burger-button_white span {
+.burger__button_color_white span {
   background-color: white;
 }
 
-.navigation__burger-button span:nth-child(1) {
+.burger__button span:nth-child(1) {
   transform: translateY(-10px);
 }
 
-.navigation__burger-button span:nth-child(3) {
+.burger__button span:nth-child(3) {
   transform: translateY(10px);
 }
 
 /* Крестик */
 
-.navigation__wrapper .navigation__burger-button span:nth-child(1) {
+.burger__wrapper .burger-menu__button span:nth-child(1) {
   transform: translateY(0px) rotate(45deg);
 }
 
-.navigation__wrapper .navigation__burger-button span:nth-child(2) {
+.burger__wrapper .burger-menu__button span:nth-child(2) {
   opacity: 0;
 }
 
-.navigation__wrapper .navigation__burger-button span:nth-child(3) {
+.burger__wrapper .burger-menu__button span:nth-child(3) {
   transform: translateY(0px) rotate(-45deg);
 }
 
-/* Бургер */
-.navigation__burger-menu {
-  display: none;
-}
-
-.navigation__wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  z-index: 1;
-}
-
-.navigation__burger {
+/* Бургер-меню */
+.burger__menu {
   display: flex;
   position: fixed;
   background-color: white;
@@ -140,11 +115,11 @@
   justify-content: space-between;
 }
 
-.navigation__burger_hidden {
+.burger__menu_hidden {
   display: none;
 }
 
-.navigation__list {
+.burger__list {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -154,15 +129,15 @@
   padding-right: 38px
 }
 
-.navigation__item {
+.burger__item {
   padding-bottom: 28px;
 }
 
-.navigation__item:last-of-type {
+.burger__item:last-of-type {
   padding-bottom: 0;
 }
 
-.navigation__burger-link {
+.burger__link {
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
@@ -170,52 +145,31 @@
   padding-bottom: 4px;
 }
 
-.navigation__burger-link_active {
+.burger__link_active {
   border-bottom: 1px solid black;
 }
 
-.navigation__profile {
-  padding: 0px 3px 0px 5px;
-  background-color: white;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 13px;
-  color: black;
-  border: 2px solid #F9F9F9;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  max-height: 32px;
-  max-width: 100px;
-  margin-bottom: 90px;
-}
-
 @media (max-width: 768px) {
-  .navigation__menu {
+  .navigation {
     display: none;
   }
 
-  .navigation__account {
-    display: none;
-  }
-
-  .navigation__burger-button {
+  .burger__button {
     visibility: visible;
   }
 
-  .navigation__burger-menu {
+  .burger {
     display: flex;
   }
 }
 
 @media (max-width: 320px) {
-  .navigation__burger-button {
+  .burger__button {
     width: 40px;
     ;
   }
 
-  .navigation__burger-button span {
+  .burger__button span {
     width: 22px;
     height: 2.5px;
   }

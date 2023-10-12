@@ -69,19 +69,19 @@
   text-align: center;
 }
 
-.profile__button-edit {
+.profile__button {
   all: unset;
-  margin: 189px 0px 16px;
-  font-weight: 400;
   font-size: 13px;
   line-height: 16px;
 }
 
-.profile__button-logout {
-  all: unset;
+.profile__button_type_edit {
+  margin: 189px 0px 16px;
+  font-weight: 400;
+}
+
+.profile__button_type_logout {
   font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
   margin-bottom: 70px;
   color: #FF3055;
 }
@@ -92,7 +92,7 @@
     padding-bottom: 96px;
   }
 
-  .profile__button-edit {
+  .profile__button_type_edit {
     margin-top: 178px;
   }
 }
@@ -108,14 +108,12 @@
     padding: 67px 58px 80px;
   }
 
-  .profile__button-edit {
-    margin-top: 335px;
+  .profile__button {
     font-size: 12px;
     line-height: 15px;
   }
 
-  .profile__button-logout {
-    font-size: 12px;
-    line-height: 15px;
+  .profile__button_type_edit {
+    margin-top: 335px;
   }
 }

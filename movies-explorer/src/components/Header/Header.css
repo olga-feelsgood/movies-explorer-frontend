@@ -2,6 +2,10 @@
   padding: 18px 70px;
 }
 
+.header_bg-color_blue {
+  background-color: #073042;
+}
+
 .header__container {
   width: 100%;
   display: flex;
@@ -9,15 +13,11 @@
   justify-content: space-between;
 }
 
-.header_color {
-  background-color: #073042;
-}
-
 .header__menu {
   padding-top: 8px;
 }
 
-.header__link-reg {
+.header__link {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -25,10 +25,12 @@
   padding-right: 30px;
 }
 
-.header__link-login {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+.header__link_type_registration {
+  color: white;
+  padding-right: 30px;
+}
+
+.header__link_type_login {
   padding: 8px 20px;
   background-color: #2BE080;
   color: black;
@@ -48,14 +50,15 @@
     padding-right: 14px;
   }
 
-
-  .header__link-reg {
+  .header__link {
     font-size: 10px;
+  }
+
+  .header__link_type_registration {
     padding-right: 14px;
   }
 
-  .header__link-login {
-    font-size: 10px;
+  .header__link_type_login {
     padding: 6px 12px;
   }
 }
