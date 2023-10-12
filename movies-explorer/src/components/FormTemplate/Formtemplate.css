@@ -1,15 +1,17 @@
-.register {
+.form-template {
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 70px;
+  margin: auto;
 }
 
-.register__container {
+.form-template__container {
   max-width: 396px;
   width: 100%;
 }
 
-.register__title {
+.form-template__title {
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
@@ -18,13 +20,13 @@
   text-align: left;
 }
 
-.register__fieldset {
+.form-template__fieldset {
   border: none;
   margin: 0;
   padding: 0;
 }
 
-.register__label {
+.form-template__label {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,11 +38,11 @@
   margin-bottom: 7px;
 }
 
-.register__label:hover {
+.form-template__label:hover {
   border-bottom: 1px solid #3456F3;
 }
 
-.register__input {
+.form-template__input {
   border: none;
   font-weight: 500;
   font-size: 14px;
@@ -49,12 +51,12 @@
   padding: 4px 0 11px;
 }
 
-.register__input:focus {
+.form-template__input:focus {
   outline: none;
   border-bottom: 1px solid #3456F3;
 }
 
-.register__error {
+.form-template__error {
   display: block;
   min-height: 17px;
   font-weight: 400;
@@ -63,8 +65,8 @@
   color: #FF004C;
 }
 
-.register__button {
-  margin: 130px 0px 16px;
+.form-template__button {
+  margin: 198px 0px 17px;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -76,7 +78,7 @@
   border: none;
 }
 
-.register__signin {
+.form-template__redirect {
   all: unset;
   font-weight: 500;
   font-size: 14px;
@@ -85,61 +87,61 @@
   color: #A0A0A0;
 }
 
-.register__link {
+.form-template__redirect-link {
   text-decoration: none;
   color: #3456F3;
 }
 
 @media(max-width: 768px) {
-  .register {
+  .form-template {
     padding-top: 232px;
   }
 }
 
 @media(max-width: 450px) {
-  .register__container {
+  .form-template__container {
     max-width: 260px;
   }
 
-  .register__button {
+  .form-template__button {
     width: 260px;
   }
 }
 
 @media(max-width: 320px) {
-  .register {
+  .form-template {
     padding-top: 56px;
     padding-bottom: 65px;
   }
 
-  .register__container {
+  .form-template__container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .register__title {
+  .form-template__title {
     padding-top: 46px;
     padding-bottom: 80px;
   }
 
-  .register__error {
+  .form-template__error {
     font-size: 10px;
     line-height: 12px;
     min-height: 24px;
   }
 
-  .register__label {
+  .form-template__label {
     margin-bottom: 0px;
   }
 
-  .register__button {
+  .form-template__button {
     margin-top: 219px;
     font-size: 12px;
     line-height: 15px;
   }
 
-  .register__signin {
+  .form-template__redirect {
     font-size: 12px;
     line-height: 15px;
   }

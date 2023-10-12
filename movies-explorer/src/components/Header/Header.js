@@ -2,9 +2,9 @@ import { useState } from 'react';
 import './Header.css';
 import '../Section/Section.css';
 import '../Link/Link.css';
-import logo from '../../images/logo.svg';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation.js';
+import Logo from '../Logo/Logo.js';
 
 function Header() {
 
@@ -20,7 +20,7 @@ function Header() {
   return (
     <header className={pathname !== '/' ? 'header section' : 'header section header_color'}>
       <div className='header__container'>
-        <Link to='/'> <img className='header__logo' src={logo} alt='логотип' /></Link>
+        <Logo />
         {isLoggedIn ? <Navigation /> : notLoggedInMenu}
       </div>
     </header >)
