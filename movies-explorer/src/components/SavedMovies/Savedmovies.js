@@ -8,11 +8,13 @@ import Header from '../Header/Header.js';
 function SavedMovies() {
   return (
     <>
-      <Header />
-      <main className='saved-movies'>
-        <SearchForm />
-        <MoviesCardList />
-      </main>
+      <div className='wrapper'>
+        <Header />
+        <main className='saved-movies'>
+          <SearchForm />
+          <MoviesCardList />
+        </main>
+      </div>
       <Footer />
     </>
   );

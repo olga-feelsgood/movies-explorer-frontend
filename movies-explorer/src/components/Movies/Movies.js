@@ -8,12 +8,14 @@ import Header from '../Header/Header.js';
 function Movies() {
   return (
     <>
-      <Header />
-      <main className='movies'>
-        <SearchForm />
-        <Preloader />
-        <MoviesCardList />
-      </main>
+      <div className='wrapper'>
+        <Header />
+        <main className='movies'>
+          <SearchForm />
+          {/* <Preloader /> */}
+          <MoviesCardList />
+        </main>
+      </div>
       <Footer />
     </>
   );

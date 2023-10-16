@@ -6,6 +6,7 @@ import Profile from '../Profile/Profile.js';
 import Register from '../Register/Register.js';
 import Login from '../Login/Login.js';
 import NotFound from '../NotFound/Notfound.js';
+import './App.css';
 
 
 function App() {

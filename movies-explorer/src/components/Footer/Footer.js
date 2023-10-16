@@ -11,10 +11,10 @@ function Footer() {
         <nav className='footer__menu'>
           <ul className='footer__links'>
             <li>
-              <a target='_blank' href='https://practicum.yandex.ru' className='footer__link link'>Яндекс.Практиткум</a>
+              <a target='_blank' href='https://practicum.yandex.ru' className='footer__link link' rel='noreferrer'>Яндекс.Практиткум</a>
             </li>
             <li>
-              <a target='_blank' href='https://github.com' className='footer__link link'>Github</a>
+              <a target='_blank' href='https://github.com' className='footer__link link' rel='noreferrer'>Github</a>
             </li>
           </ul>
         </nav>

@@ -1,6 +1,7 @@
 .footer {
+  flex-shrink: 0;
   flex-direction: column;
-  padding: 92px 70px 20px;
+  padding: 92px 70px 38px;
 }
 
 .footer__text {
