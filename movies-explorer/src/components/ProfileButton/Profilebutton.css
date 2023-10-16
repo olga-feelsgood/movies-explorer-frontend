@@ -12,10 +12,13 @@
   align-items: center;
   max-height: 32px;
   max-width: 100px;
-  /* margin-bottom: 90px; */
 }
 
-.profile-button__icon {
+.profile-button:after {
+  content: "";
+  background-image: url(../../images/profile_button_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   height: 11px;
   width: 11px;
   padding: 7px;

@@ -85,15 +85,15 @@
 
 /* Крестик */
 
-.burger__wrapper .burger-menu__button span:nth-child(1) {
+.burger__wrapper .burger__button span:nth-child(1) {
   transform: translateY(0px) rotate(45deg);
 }
 
-.burger__wrapper .burger-menu__button span:nth-child(2) {
+.burger__wrapper .burger__button span:nth-child(2) {
   opacity: 0;
 }
 
-.burger__wrapper .burger-menu__button span:nth-child(3) {
+.burger__wrapper .burger__button span:nth-child(3) {
   transform: translateY(0px) rotate(-45deg);
 }
 

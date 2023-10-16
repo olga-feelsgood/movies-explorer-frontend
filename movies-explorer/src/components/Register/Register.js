@@ -9,7 +9,7 @@ function Register() {
         buttonTitle='Зарегистрироватться'
         redirectLink='/signin'
         redirectText='Уже зарегистрированы?'
-        redirectTextLink='Войти'
+        redirectLinkText='Войти'
         children={
           <>
             <label className='form-template__label'>Имя

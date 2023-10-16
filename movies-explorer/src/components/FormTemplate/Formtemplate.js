@@ -2,10 +2,13 @@ import './Formtemplate.css';
 import '../Section/Section.css';
 import '../Link/Link.css';
 import Logo from '../Logo/Logo.js';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 function FormTemplate(props) {
+
+  let { pathname } = useLocation();
+
   return (
     < div className='form-template' >
       <div className='form-template__container'>
@@ -37,7 +40,7 @@ function FormTemplate(props) {
             </label>
             <span className='form-template__error'>Что-то пошло не так...</span>
           </fieldset>
-          <button className='form-template__button link' type='submit'>{props.buttonTitle}</button>
+          <button className={pathname === '/signin' ?'form-template__button form-template__button_type_lower link':'form-template__button link'} type='submit'>{props.buttonTitle}</button>
         </form>
       </div>
       <p className='form-template__redirect'>{props.redirectText}

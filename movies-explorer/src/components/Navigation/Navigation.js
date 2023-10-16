@@ -8,7 +8,12 @@ import ProfileButton from '../ProfileButton/Profilebutton.js';
 function Navigation() {
 
   let { pathname } = useLocation();
-  const [isBurgerOpen, setIsBurgerOpen] = useState(true);
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+
+  function openOrCloseBurger() {
+    if (isBurgerOpen) { setIsBurgerOpen(false) } else { setIsBurgerOpen(true) };
+  }
+
 
   return (
     <>
@@ -19,9 +24,10 @@ function Navigation() {
       <ProfileButton />
 
       <div className='burger'>
-        <div className={isBurgerOpen && 'burger__wrapper'}>
-          <button className={isBurgerOpen ? 'burger__button burger__button_opened' :
-            (pathname !== '/' ? 'burger__button' : 'burger__button burger__button_color_white')}>
+        <div className={isBurgerOpen && 'burger__wrapper'} onClick={openOrCloseBurger}>
+          <button onClick={openOrCloseBurger}
+            className={isBurgerOpen ? 'burger__button burger__button_opened' :
+              (pathname !== '/' ? 'burger__button' : 'burger__button burger__button_color_white')}>
             <span></span>
             <span></span>
             <span></span>

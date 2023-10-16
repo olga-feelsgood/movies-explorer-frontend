@@ -1,11 +1,24 @@
 .promo {
   background-color: #073042;
-  padding: 73px 70px 42px;
-  justify-content: space-between;
+  padding: 70px 70px 40px;
 }
 
 .promo__container {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+.promo__container:after {
+  content: "";
+  background-image: url(../../images/promo_logo_Earth.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 310px;
+  width: 304px;
+}
+
+.promo__box {
   flex-direction: column;
 }
 
@@ -34,17 +47,6 @@
   opacity: .5;
 }
 
-.promo__logobox {
-  width: 310px;
-  height: 304px;
-}
-
-.promo__logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 @media(max-width: 768px) {
   .promo {
     padding: 138px 30px 89px;
@@ -53,7 +55,7 @@
     align-items: center;
   }
 
-  .promo__logobox {
+  .promo__container:after {
     padding-bottom: 48px;
   }
 
@@ -79,7 +81,7 @@
     padding: 67px 10px 80px;
   }
 
-  .promo__logobox {
+  .promo__container:after {
     width: 210px;
     height: 206px;
     padding-bottom: 44px;
