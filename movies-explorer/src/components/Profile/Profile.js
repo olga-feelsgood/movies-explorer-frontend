@@ -1,9 +1,20 @@
+import { useState } from 'react';
 import './Profile.css';
 import '../Section/Section.css';
 import '../Link/Link.css';
 import Header from '../Header/Header.js';
 
 function Profile() {
+
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  const [isButtonAble, setIsButtonAble] = useState(false);
+
+  function turnOnEditMode() {
+    setIsEditMode(true);
+  }
+
+
   return (
     <>
       <Header />
@@ -21,6 +32,7 @@ function Profile() {
                 minLength='2'
                 maxLength='30'
                 defaultValue='Виталий'
+                disabled={!isEditMode}
               />
             </label>
             <span className='profile__error'></span>
@@ -33,13 +45,23 @@ function Profile() {
                 name='email'
                 autoComplete='on'
                 defaultValue='pochta@yandex.ru'
+                disabled={!isEditMode}
               />
             </label>
             <span className='profile__error'>Пользователь с указанным email уже зарегистрирован</span>
           </fieldset>
           <div className='profile__buttons'>
-            <button className='profile__button profile__button_type_edit link' type='submit'>Редактировать</button>
-            <button className='profile__button profile__button_type_logout link' type='submit'>Выйти из аккаунта</button>
+            {isEditMode ?
+              <>
+                <span className={!isButtonAble ? 'profile__error profile__error_position_low': 'profile__error profile__error_position_low profile__error_hidden'}>При обновлении профиля произошла ошибка</span>
+                <button className={isButtonAble ? 'profile__save-button link' : 'profile__save-button profile__save-button_disabled link'} type='submit'>Сохранить</button>
+              </>
+              :
+              <>
+                <button className='profile__button profile__button_type_edit link' type='button' onClick={turnOnEditMode}>Редактировать</button>
+                <button className='profile__button profile__button_type_logout link' type='button'>Выйти из аккаунта</button>
+              </>
+            }
           </div>
         </form>
       </main >

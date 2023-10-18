@@ -1,7 +1,6 @@
 .searchform {
   flex-direction: column;
   padding: 65px 70px 48px;
-
 }
 
 .searchform__form {
@@ -49,13 +48,6 @@
   flex-direction: row;
 }
 
-.searchform__text {
-  margin: 0;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
-  padding-left: 14px;
-}
 
 @media(max-width: 768px) {
   .searchform {
