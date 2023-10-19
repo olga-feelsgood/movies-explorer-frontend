@@ -9,7 +9,8 @@ function Login() {
         buttonTitle='Войти'
         redirectLink='/signup'
         redirectText='Еще не зарегистрированы?'
-        redirectLinkText='Регистрация' />
+        redirectLinkText='Регистрация'
+        formName='Login' />
     </main>
   )
 }

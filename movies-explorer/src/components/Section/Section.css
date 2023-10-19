@@ -1,5 +1,5 @@
 .section {
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   box-sizing: border-box;
   width: 100%;

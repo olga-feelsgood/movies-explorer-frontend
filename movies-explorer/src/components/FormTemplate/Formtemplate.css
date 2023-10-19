@@ -149,4 +149,8 @@
     font-size: 12px;
     line-height: 15px;
   }
+
+  .form-template__button_type_lower {
+    margin-top: 287px;
+  }
 }

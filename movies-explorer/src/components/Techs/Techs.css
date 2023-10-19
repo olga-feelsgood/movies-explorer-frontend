@@ -87,9 +87,21 @@
   }
 }
 
+@media(max-width: 620px) {
+  .techs__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-left: 71px;
+    margin-right: 71px;
+    align-self: center;
+  }
+}
+
 @media(max-width: 320px) {
   .techs {
-    padding: 80px 18px 70px;
+    padding: 82px 18px 70px;
     background-color: white;
   }
 
@@ -104,15 +116,6 @@
     font-size: 11px;
     line-height: 16px;
     padding-bottom: 50px;
-  }
-
-  .techs__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 10px;
-    column-gap: 10px;
-    margin-left: 71px;
-    margin-right: 71px;
   }
 
   .techs__item {

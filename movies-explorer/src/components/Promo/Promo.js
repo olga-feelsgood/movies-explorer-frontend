@@ -1,6 +1,5 @@
 import './Promo.css';
 import '../Section/Section.css';
-import logoEarth from '../../images/promo_logo_Earth.png';
 
 function Promo() {
   return (

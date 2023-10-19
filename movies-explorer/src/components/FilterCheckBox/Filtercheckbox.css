@@ -46,3 +46,43 @@
   left: 21px;
   background-color: white;
 }
+
+
+@media(max-width: 768px) {
+  .filter-checkbox+label {
+    padding-left: 0;
+    padding-right: 52px;
+  }
+
+  .filter-checkbox+label:before {
+    top: 2px;
+    left: 134px;
+  }
+
+  .filter-checkbox+label:after {
+    top: 4px;
+    left: 137px;
+  }
+
+  .filter-checkbox:checked+label:after {
+    left: 156px;
+  }
+}
+
+@media(max-width: 320px) {
+  .filter-checkbox+label {
+    font-size: 11px;
+  }
+
+  .filter-checkbox+label:before {
+    left: 115px;
+  }
+
+  .filter-checkbox+label:after {
+    left: 118px;
+  }
+
+  .filter-checkbox:checked+label:after {
+    left: 137px;
+  }
+}

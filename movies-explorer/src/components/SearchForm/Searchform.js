@@ -13,7 +13,6 @@ function SearchForm() {
           required
           type='text'
           minLength='1'
-          id=''
         />
         <button className='searchform__button' type='submit'>Найти</button>
       </form>

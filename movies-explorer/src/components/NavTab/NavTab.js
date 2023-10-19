@@ -3,9 +3,9 @@ import '../Link/Link.css';
 
 function NavTab() {
   return (
-    <section className='navtab section'>
+    <div className='navtab section'>
       <a href='#aboutProject' className='navtab__link link'>Узнать больше</a>
-    </section>)
+    </div>)
 }
 
 export default NavTab;

@@ -47,7 +47,9 @@ function Navigation() {
                   'burger__link link'}>Сохраненные фильмы</NavLink>
               </li>
             </ul>
-            <ProfileButton />
+            <div className='burger__profile-button'>
+              <ProfileButton />
+            </div>
           </nav >
         </div>
       </div>

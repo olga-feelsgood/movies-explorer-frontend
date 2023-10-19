@@ -1,7 +1,7 @@
 .movies-cardlist {
   display: flex;
   flex-direction: column;
-  padding: 70px 70px 63px;
+  padding: 70px 70px 65px;
 }
 
 .movies-cardlist__list {
@@ -43,6 +43,7 @@
   .movies-cardlist__list {
     grid-template-columns: repeat(auto-fill, minmax(339px, 1fr));
     gap: 30px;
+    padding-bottom: 57px;
   }
 }
 
@@ -52,12 +53,17 @@
   }
 
   .movies-cardlist {
+    padding-top: 80px;
     padding-left: 10px;
     padding-right: 10px;
   }
 
   .movies-cardlist__list {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 21px;
+    gap: 31px;
+  }
+
+  .movies-cardlist__button {
+    padding-top: 11px;
   }
 }

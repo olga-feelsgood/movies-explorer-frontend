@@ -116,12 +116,6 @@
 }
 
 @media(max-width: 427px) {
-  .about-project__subtitle {
-    min-height: 96px;
-  }
-}
-
-@media(max-width: 320px) {
   .about-project {
     padding: 70px 18px 60px;
   }

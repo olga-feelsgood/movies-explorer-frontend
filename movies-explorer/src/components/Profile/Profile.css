@@ -108,7 +108,7 @@
   line-height: 17px;
   background-color: #3456F3;
   color: white;
-  width: 396px;
+  width: 410px;
   padding: 13px 0;
   border-radius: 3px;
   border: none;
@@ -129,15 +129,26 @@
   .profile__button_type_edit {
     margin-top: 178px;
   }
+
+  .profile__input {
+    width: 85%;
+  }
+
 }
 
 @media(max-width: 450px) {
   .profile__form {
     max-width: 260px;
   }
-}
 
-@media(max-width: 320px) {
+  .profile__input {
+    width: 85%;
+  }
+
+  .profile__save-button {
+    width: 260px;
+  }
+
   .profile__title {
     padding: 67px 58px 80px;
   }

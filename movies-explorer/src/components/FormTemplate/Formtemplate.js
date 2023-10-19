@@ -14,7 +14,7 @@ function FormTemplate(props) {
       <div className='form-template__container'>
         <Logo />
         <h1 className='form-template__title'>{props.title}</h1>
-        <form className='form-template__form'>
+        <form className='form-template__form' name={props.formName}>
           <fieldset className='form-template__fieldset'>
             {props.children}
             <label className='form-template__label'>E-mail
@@ -25,6 +25,7 @@ function FormTemplate(props) {
                 name='email'
                 autoComplete='on'
                 defaultValue='pochta@yandex.ru'
+                placeholder='E-mail'
               />
             </label>
             <span className='form-template__error'>Пользователь с указанным email уже зарегистрирован</span>
@@ -36,6 +37,7 @@ function FormTemplate(props) {
                 name='password'
                 autoComplete='on'
                 defaultValue='••••••••••••••'
+                placeholder='Пароль'
               />
             </label>
             <span className='form-template__error'>Что-то пошло не так...</span>

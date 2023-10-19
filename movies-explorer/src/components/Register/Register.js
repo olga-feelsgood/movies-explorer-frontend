@@ -10,6 +10,7 @@ function Register() {
         redirectLink='/signin'
         redirectText='Уже зарегистрированы?'
         redirectLinkText='Войти'
+        formName='Register'
         children={
           <>
             <label className='form-template__label'>Имя
@@ -22,6 +23,7 @@ function Register() {
                 minLength='2'
                 maxLength='30'
                 defaultValue='Виталий'
+                placeholder='Имя'
               />
             </label>
             <span className='form-template__error'></span>
