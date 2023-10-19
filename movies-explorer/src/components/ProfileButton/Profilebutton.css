@@ -26,3 +26,10 @@
   background-color: #F9F9F9;
   margin-left: 8px;
 }
+
+
+@media(max-width: 768px) {
+  .profile-button {
+    display: none;
+  }
+}
