@@ -1,0 +1,38 @@
+.navtab {
+  background-color: #073042;
+  box-sizing: border-box;
+  padding: 39px 70px 74px;
+  width: 100%;
+}
+
+.navtab__link {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFF;
+  border: 1px solid #FFF;
+  padding: 10px 20px;
+}
+
+@media(max-width: 768px) {
+  .navtab {
+    padding-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .navtab__link {
+    margin: auto;
+  }
+}
+
+@media(max-width: 320px) {
+  .navtab {
+    padding-bottom: 30px;
+  }
+
+  .navtab__link {
+    padding-bottom: 9px;
+    padding-top: 9px;
+  }
+}

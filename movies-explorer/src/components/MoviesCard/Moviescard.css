@@ -1,0 +1,120 @@
+.movies-card {
+  width: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movies-card__trailer-link {
+  display: flex;
+  width: 100%;
+  height: 151px;
+  padding-bottom: 13px;
+}
+
+.movies-card__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.movies-card__box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movies-card__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.movies-card__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  width: 100%;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 32px;
+  padding-bottom: 12px;
+}
+
+.movies-card__text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  box-sizing: border-box;
+  border-top: 1px solid #E8E8E8;
+  padding-top: 8px;
+}
+
+.movies-card__button {
+  background-color: #F9F9F9;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../images/button_to_save_icon.svg");
+}
+
+.movies-card__button:hover {
+  cursor: pointer;
+}
+
+.movies-card__button_type_save {
+  background-image: url("../../images/button_saved_icon.svg");
+}
+
+.movies-card__button_type_delete {
+  background-image: none;
+  background-color: white;
+}
+
+.movies-card__button_type_delete:hover {
+  background-color: #F9F9F9;
+  background-image: url("../../images/button_delete_icon.svg");
+}
+
+@media(max-width: 768px) {
+  .movies-card__trailer-link {
+    height: 190px;
+  }
+
+  .movies-card__title {
+    padding-bottom: 13px;
+  }
+}
+
+@media(max-width: 320px) {
+  .movies-card__trailer-link {
+    height: 168px;
+  }
+
+  .movies-card__trailer-link {
+    padding-bottom: 4px;
+  }
+
+  .movies-card__title {
+    font-size: 12px;
+    line-height: 15px;
+    padding-bottom: 24px;
+  }
+
+  .movies-card__text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

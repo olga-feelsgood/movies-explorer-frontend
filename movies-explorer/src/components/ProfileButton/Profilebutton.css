@@ -1,0 +1,35 @@
+.profile-button {
+  padding: 0px 3px 0px 5px;
+  background-color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  color: black;
+  border: 2px solid #F9F9F9;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  max-height: 32px;
+  max-width: 100px;
+}
+
+.profile-button:after {
+  content: "";
+  background-image: url(../../images/profile_button_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 11px;
+  width: 11px;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: #F9F9F9;
+  margin-left: 8px;
+}
+
+
+@media(max-width: 768px) {
+  .profile-button {
+    display: none;
+  }
+}

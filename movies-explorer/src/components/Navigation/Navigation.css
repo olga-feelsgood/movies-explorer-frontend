@@ -1,0 +1,203 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+}
+
+.navigation__link {
+  padding-right: 16px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: black;
+}
+
+.navigation__link:last-of-type {
+  padding-right: 0;
+}
+
+.navigation__link_active {
+  font-weight: 500;
+}
+
+.navigation__link_color_white {
+  color: white;
+}
+
+/* Бургер */
+.burger {
+  display: none;
+}
+
+.burger__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
+}
+
+/* Бургер-кнопка */
+.burger__button {
+  visibility: hidden;
+  all: unset;
+  position: relative;
+  top: 0px;
+  right: 0px;
+  height: 40px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.burger__button_opened {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.burger__button span {
+  display: block;
+  background-color: black;
+  position: absolute;
+  display: block;
+  width: 28px;
+  height: 3px;
+  z-index: 3;
+  transition: opacity .1s, transfrom .5s;
+}
+
+.burger__button_color_white span {
+  background-color: white;
+}
+
+.burger__button span:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.burger__button span:nth-child(3) {
+  transform: translateY(10px);
+}
+
+/* Крестик */
+
+.burger__wrapper .burger__button span:nth-child(1) {
+  width: 22px;
+  transform: translateY(0px) rotate(45deg);
+}
+
+.burger__wrapper .burger__button span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger__wrapper .burger__button span:nth-child(3) {
+  width: 22px;
+  transform: translateY(0px) rotate(-45deg);
+}
+
+/* Бургер-меню */
+.burger__menu {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  box-sizing: border-box;
+  max-width: 520px;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burger__menu_hidden {
+  display: none;
+}
+
+.burger__list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+  padding-top: 160px;
+  padding-right: 38px
+}
+
+.burger__item {
+  padding-bottom: 28px;
+}
+
+.burger__item:last-of-type {
+  padding-bottom: 0;
+}
+
+.burger__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: black;
+  padding-bottom: 4px;
+}
+
+.burger__link_active {
+  border-bottom: 1px solid black;
+}
+
+.burger__profile-button {
+  margin-bottom: 91px;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+
+  .burger__button {
+    visibility: visible;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+@media (max-width: 320px) {
+  .burger__button {
+    width: 40px;
+  }
+
+  .burger__button span {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .burger__button_opened {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+  }
+
+  .burger__list {
+    padding-top: 145px;
+  }
+
+  .burger__link {
+    padding-bottom: 7px;
+  }
+
+  .burger__item {
+    padding-bottom: 23px;
+  }
+
+  .burger__profile-button {
+    margin-bottom: 48px;
+  }
+}
