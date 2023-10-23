@@ -24,7 +24,7 @@ function Navigation() {
       <ProfileButton />
 
       <div className='burger'>
-        <div className={isBurgerOpen && 'burger__wrapper'} onClick={openOrCloseBurger}>
+        <div className={isBurgerOpen ? 'burger__wrapper' : undefined} onClick={openOrCloseBurger}>
           <button onClick={openOrCloseBurger}
             className={isBurgerOpen ? 'burger__button burger__button_opened' :
               (pathname !== '/' ? 'burger__button' : 'burger__button burger__button_color_white')}>

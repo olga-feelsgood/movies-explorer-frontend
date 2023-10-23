@@ -2,11 +2,17 @@ import './Searchform.css';
 import '../Section/Section.css';
 import FilterCheckBox from '../FilterCheckBox/Filtercheckbox';
 
-function SearchForm() {
+function SearchForm(props) {
+
+  function handleSubmit (evt) {
+    evt.preventDefault();
+    props.onSubmit();
+
+  }
   return (
 
     <div className='searchform section'>
-      <form className='searchform__form'>
+      <form className='searchform__form' onSubmit={handleSubmit} name='searchform'>
         <input
           className='searchform__input'
           placeholder='Фильм'
