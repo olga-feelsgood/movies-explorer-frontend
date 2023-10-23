@@ -2,29 +2,15 @@ import { useLocation } from 'react-router-dom';
 import './Moviescardlist.css';
 import MoviesCard from '../MoviesCard/Moviescard.js'
 
-function MoviesCardList() {
+function MoviesCardList(props) {
 
   const location = useLocation();
+
 
   return (
     <section className='movies-cardlist'>
       <ul className='movies-cardlist__list'>
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
-        <MoviesCard />
+        { props.movies.map(movie =><MoviesCard movie={movie} />)}
       </ul>
       {location.pathname === '/movies' && <button type='button' className='movies-cardlist__button'>Еще</button>}
     </section>

@@ -15,7 +15,8 @@ function Movies(props) {
           <SearchForm
             onSubmit={props.onSearch} />
           {props.isLoading ? <Preloader /> :
-            <MoviesCardList />}
+            <MoviesCardList
+              movies={props.movies.slice(0,16)} />}
         </main>
       </div>
       <Footer />

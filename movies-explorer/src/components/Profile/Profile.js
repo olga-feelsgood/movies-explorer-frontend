@@ -21,7 +21,7 @@ function Profile() {
       <Header />
       <main className='profile section'>
         <h1 className='profile__title'>Привет, Виталий!</h1>
-        <form className='profile__form'>
+        <form className='profile__form' name='profile'>
           <fieldset className='profile__fieldset'>
             <label className='profile__label'>Имя
               <input

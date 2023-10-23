@@ -14,11 +14,11 @@ import moviesApi from '../../utils/MoviesApi.js';
 function App() {
 
   const [beatMovies, setBeatMovies] = useState([]);
-  const [isMoviesLoading, setIsMoviesLoading] = useState(false);
+  const [isMoviesLoading, setIsMoviesLoading] = useState(false);//состояние прелодера
 
   //Получить и сохранить фильмы
   function getBeatMovies() {
-    if (!beatMovies) { console.log('уже есть фильмы');}
+    if (!beatMovies) { console.log('уже есть фильмы'); }
     else {
       setIsMoviesLoading(true);
       moviesApi.getMovies()
@@ -60,6 +60,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/movies' element={
           <Movies
+            movies={beatMovies}
             isLoading={isMoviesLoading}
             onSearch={getBeatMovies} />} />
         <Route path='/saved-movies' element={<SavedMovies />} />
