@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Moviescard.css';
 import '../Link/Link.css';
-import movieCardImage from '../../images/movie_image_example.png';
+import moviesApi from '../../utils/MoviesApi';
 
 function MoviesCard(props) {
 
@@ -19,10 +19,12 @@ function MoviesCard(props) {
     return hour ? `${hour}ч ${min}м`: `${min}`;
   }
 
+  console.log(moviesApi._url);
+
   return (
     <li className='movies-card'>
-      <a className='movies-card__trailer-link link' target='_blank' rel='noreferrer' href='https://github.com'>
-        <img className='movies-card__image' alt='Обложка фильма' src={movieCardImage} />
+      <a className='movies-card__trailer-link link' target='_blank' rel='noreferrer' href={props.movie.trailerLink}>
+        <img className='movies-card__image' alt='Обложка фильма' src={moviesApi._url + props.movie.image.url} />
       </a>
       <div className='movies-card__box'>
         <div className='movies-card__container'>
