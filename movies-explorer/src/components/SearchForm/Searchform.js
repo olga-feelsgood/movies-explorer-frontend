@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import './Searchform.css';
 import '../Section/Section.css';
 import FilterCheckBox from '../FilterCheckBox/Filtercheckbox';
 
 function SearchForm(props) {
 
-  function handleSubmit (evt) {
+const [searchQuery, setSearchQuery] = useState('');
+
+  const changeSearchQuery = (evt) => {
+   setSearchQuery(evt.target.value);
+    console.log(searchQuery);
+  }
+
+  function handleSubmit(evt) {
     evt.preventDefault();
-    props.onSubmit();
+    props.onSearch(searchQuery);
 
   }
   return (
@@ -19,6 +27,8 @@ function SearchForm(props) {
           required
           type='text'
           minLength='1'
+          value={searchQuery}
+          onChange={changeSearchQuery}
         />
         <button className='searchform__button' type='submit'>Найти</button>
       </form>

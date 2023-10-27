@@ -19,8 +19,6 @@ function MoviesCard(props) {
     return hour ? `${hour}ч ${min}м`: `${min}`;
   }
 
-  console.log(moviesApi._url);
-
   return (
     <li className='movies-card'>
       <a className='movies-card__trailer-link link' target='_blank' rel='noreferrer' href={props.movie.trailerLink}>
