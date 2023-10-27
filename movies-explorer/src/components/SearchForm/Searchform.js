@@ -33,7 +33,9 @@ const [searchQuery, setSearchQuery] = useState('');
         <button className='searchform__button' type='submit'>Найти</button>
       </form>
       <div className='searchform__container'>
-        <FilterCheckBox />
+        <FilterCheckBox
+        isShort={props.isShort}
+        handleIsShort = {props.handleIsShort}/>
       </div>
     </div>
   )

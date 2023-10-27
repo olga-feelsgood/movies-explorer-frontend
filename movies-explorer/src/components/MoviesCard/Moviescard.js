@@ -16,7 +16,7 @@ function MoviesCard(props) {
   function formatTime(duration) {
     const min = duration % 60;
     const hour = Math.floor(duration / 60);
-    return hour ? `${hour}ч ${min}м`: `${min}`;
+    return hour ? `${hour}ч ${min}м`: `${min}м`;
   }
 
   return (
