@@ -14,24 +14,22 @@ function Movies(props) {
   const [beatMovies, setBeatMovies] = useState([]);//наличие загруженных с beat фильмов
   const [isShort, setIsShort] = useState(false);//является ли короткометражкой
   const [isMoviesLoading, setIsMoviesLoading] = useState(false);//состояние прелодера
-  const [isFound, setIsFound] = useState(false);//если ничего не найдено
+  const [isMoviesNotFound, setIsMoviesNotFound] = useState(false);//если не найдены фильмы по запросу
 
   // Отфильтровать фильмы по поисковому запросу + чекбоксу короткометражка,
   // сохранить все фильмы и фильтрованные в localStorage
   function handleFilterMovies(movies, isShort, searchQuery) {
     const filteredMovies = filterMovies(movies, isShort, searchQuery);
-    console.log(filteredMovies);
     setBeatMovies(filteredMovies);
     localStorage.setItem('allBeatMovies', JSON.stringify(movies));
     localStorage.setItem('filteredMovies', JSON.stringify(filteredMovies));
-    console.log(beatMovies);
   }
 
   //Получить фильмы от beatmovies и отфильтровать по запросу
   function getAndFilterBeatMovies(query) {
     localStorage.setItem('moviesSearch', query);//сохранить историю
+    // localStorage.clear();
     const allBeatMovies = JSON.parse(localStorage.getItem('allBeatMovies'));
-    console.log(allBeatMovies);
     if (allBeatMovies) {
       handleFilterMovies(allBeatMovies, isShort, query);
     } else {
@@ -52,6 +50,11 @@ function Movies(props) {
     localStorage.setItem('shortMovies', JSON.stringify(shortMovie));
   }
 
+  //Менять переменную состояния, если не найдены фильмы
+  useEffect(() => {
+    setIsMoviesNotFound(beatMovies.length === 0 && localStorage.getItem('moviesSearch'));
+  }, [beatMovies])
+
   return (
     <>
       <div className='wrapper'>
@@ -64,7 +67,8 @@ function Movies(props) {
           />
           {props.isLoading ? <Preloader /> :
             <MoviesCardList
-              movies={beatMovies} />}
+              movies={beatMovies}
+              isMoviesNotFound={isMoviesNotFound} />}
         </main>
       </div>
       <Footer />
