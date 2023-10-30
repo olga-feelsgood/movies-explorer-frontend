@@ -78,6 +78,11 @@
   border: none;
 }
 
+.form-template__button_disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+}
+
 .form-template__button_type_lower {
   margin-top: 198px;
 }
