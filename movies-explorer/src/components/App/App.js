@@ -49,7 +49,13 @@ function App() {
         }
       })
       .catch((err) => {
-        console.log(err)
+        if (err === 'Что-то пошло не так: 401') {
+          const errorMessage = 'Вы ввели неправильный логин или пароль'
+          setMessage(errorMessage);
+        } else {
+          const errorMessage = 'При авторизации произошла ошибка'
+          setMessage(errorMessage)
+        }
       })
   }
 
@@ -62,7 +68,7 @@ function App() {
         <Route path='/saved-movies' element={<SavedMovies />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/signup' element={<Register onRegisterUser={handleRegisterUser} message={message} />} />
-        <Route path='/signin' element={<Login onLoginUser={handleLoginUser} />} />
+        <Route path='/signin' element={<Login onLoginUser={handleLoginUser} message={message} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>

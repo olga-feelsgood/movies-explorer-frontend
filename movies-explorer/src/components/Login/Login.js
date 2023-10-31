@@ -29,6 +29,7 @@ function Login(props) {
         formName='Login'
         onSubmit={handleSubmit}
         isValid={isFormValid}
+        errorMessage={props.message}
         children={
           <>
             <label className='form-template__label'>E-mail
