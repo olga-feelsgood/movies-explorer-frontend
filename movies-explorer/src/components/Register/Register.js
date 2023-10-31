@@ -20,6 +20,9 @@ function Register(props) {
     });
   }
 
+  console.log(props.message)
+
+
   return (
     <main className='main'>
       <FormTemplate
@@ -31,6 +34,7 @@ function Register(props) {
         formName='Register'
         onSubmit={handleSubmit}
         isValid={isFormValid}
+        errorMessage={props.message}
         children={
           <>
             <label className='form-template__label'>Имя

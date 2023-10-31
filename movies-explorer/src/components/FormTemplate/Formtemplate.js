@@ -8,6 +8,8 @@ function FormTemplate(props) {
 
   let { pathname } = useLocation();
 
+  console.log(props.errorMessage)
+
   return (
     < div className='form-template' >
       <div className='form-template__container'>
@@ -17,8 +19,11 @@ function FormTemplate(props) {
           <fieldset className='form-template__fieldset'>
             {props.children}
           </fieldset>
-          <button className={pathname === '/signin' ? `form-template__button form-template__button_type_lower link ${!props.isValid && 'form-template__button_disabled'}`
-            : `form-template__button link ${!props.isValid && 'form-template__button_disabled'}`} type='submit'>{props.buttonTitle}</button>
+          <>
+            {props.errorMessage ? <span className='form-template__server-error'>{props.errorMessage}</span> : undefined}
+            <button className={pathname === '/signin' ? `form-template__button form-template__button_type_lower link ${!props.isValid && 'form-template__button_disabled'}`
+              : `form-template__button link ${!props.isValid && 'form-template__button_disabled'}`} type='submit'>{props.buttonTitle}</button>
+          </>
         </form>
       </div>
       <p className='form-template__redirect'>{props.redirectText}

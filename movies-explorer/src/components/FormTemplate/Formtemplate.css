@@ -65,8 +65,24 @@
   color: #FF004C;
 }
 
+.form-template__server-error {
+  margin-top: 91px;
+  display: block;
+  min-height: 17px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  color: #FF004C;
+  text-align: center;
+}
+
+.form-template__server-error_hidden {
+  visibility: hidden;
+}
+
 .form-template__button {
-  margin: 128px 0px 17px;
+  margin: 20px 0px 17px;
+  /* margin: 128px 0px 17px; */
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -144,8 +160,11 @@
     margin-bottom: 0px;
   }
 
+  .form-template__server-error {
+    margin-top: 182px;}
+
   .form-template__button {
-    margin-top: 219px;
+    /* margin-top: 219px; */
     font-size: 12px;
     line-height: 15px;
   }

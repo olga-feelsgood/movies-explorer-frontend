@@ -14,6 +14,7 @@ function App() {
 
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [message, setMessage] = useState([]);
 
   //Регистрация пользователя
   function handleRegisterUser({ name, email, password }) {
@@ -21,12 +22,19 @@ function App() {
     registerNewUser({ name, email, password })
       .then(() => {
         console.log('вы зарегистрировались');
-        handleLoginUser({email, password});
+        handleLoginUser({ email, password });
         // handleSuccessInfotoolTipOpen();
       })
       .catch((err) => {
         // handleFailInfotoolTipOpen();
         console.log(err);
+        if (err === 'Что-то пошло не так: 409') {
+          const errormessage = 'Пользователь с таким email уже существует'
+          setMessage(errormessage);
+        } else {
+          const errormessage = 'При регистрации пользователя произошла ошибка'
+          setMessage(errormessage)
+        }
       })
   }
 
@@ -53,8 +61,8 @@ function App() {
         <Route path='/movies' element={<Movies />} />
         <Route path='/saved-movies' element={<SavedMovies />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='/signup' element={<Register onRegisterUser={handleRegisterUser} />} />
-        <Route path='/signin' element={<Login onLoginUser={handleLoginUser}/>} />
+        <Route path='/signup' element={<Register onRegisterUser={handleRegisterUser} message={message} />} />
+        <Route path='/signin' element={<Login onLoginUser={handleLoginUser} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>
