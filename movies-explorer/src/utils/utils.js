@@ -1,13 +1,14 @@
-export function filterMovies(movies, isShort, searchQuery) {
+export function filterShortMovies(movies) {
   return movies.filter((movie) => {
-    if (isShort) {
-      const result = (movie.nameRU.includes(searchQuery) && (movie.duration <= 40)) ||
-        (movie.nameEN.includes(searchQuery) && (movie.duration <= 40))
-      return result
-    } else {
-      const result = movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase())
-      return result
-    }
+    const result = (movie.duration <= 40);
+    return result;
+  })
+}
+
+export function filterByTitleMovies(movies, searchQuery) {
+  return movies.filter((movie) => {
+    const result = movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase());
+    return result;
   })
 }

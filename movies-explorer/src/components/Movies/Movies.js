@@ -6,23 +6,33 @@ import Footer from '../Footer/Footer.js';
 import Preloader from '../Preloader/Preloader.js';
 import Header from '../Header/Header.js';
 import moviesApi from '../../utils/MoviesApi.js';
-import { filterMovies } from '../../utils/utils';
+import { filterByTitleMovies, filterShortMovies } from '../../utils/utils';
 
 
 function Movies(props) {
 
-  const [beatMovies, setBeatMovies] = useState([]);//наличие загруженных с beat фильмов
+  const [beatMovies, setBeatMovies] = useState([]);//фильмы отфильтрованные по запросу
   const [isShort, setIsShort] = useState(false);//является ли короткометражкой
   const [isMoviesLoading, setIsMoviesLoading] = useState(false);//состояние прелодера
   const [isMoviesNotFound, setIsMoviesNotFound] = useState(false);//если не найдены фильмы по запросу
+  const [filteredMovies, setFilteredMovies] = useState([]);//фильмы отфильтрованные по чекбоксу короткометражка
 
   // Отфильтровать фильмы по поисковому запросу + чекбоксу короткометражка,
   // сохранить все фильмы и фильтрованные в localStorage
   function handleFilterMovies(movies, isShort, searchQuery) {
-    const filteredMovies = filterMovies(movies, isShort, searchQuery);
+    const filteredMovies = filterByTitleMovies(movies, searchQuery);
     setBeatMovies(filteredMovies);
+    setFilteredMovies(isShort ? filterShortMovies(filteredMovies) : filteredMovies);
     localStorage.setItem('allBeatMovies', JSON.stringify(movies));
     localStorage.setItem('filteredMovies', JSON.stringify(filteredMovies));
+  }
+
+  //Функция фильтрации короткометражек
+  function handleShortMovies() {
+    const newShortValue = !isShort;
+    setIsShort(newShortValue);
+    setFilteredMovies(newShortValue ? filterShortMovies(beatMovies) : beatMovies);
+    localStorage.setItem('short', newShortValue);
   }
 
   //Получить фильмы от beatmovies и отфильтровать по запросу
@@ -43,17 +53,23 @@ function Movies(props) {
     }
   };
 
-  //Менять isShort для чекбокса
-  function handleIsShort() {
-    const shortMovie = !isShort;
-    setIsShort(shortMovie);
-    localStorage.setItem('shortMovies', JSON.stringify(shortMovie));
-  }
+//Изменять состояние чекбокса
+  useEffect(() => {
+    const short = localStorage.getItem('short') === 'true';
+    setIsShort(short);
+  }, [])
+
+//При изменениии чекбокса короткометражек заново фильтровать фильмы
+  useEffect(() => {
+    const movies = JSON.parse(localStorage.getItem('allBeatMovies'));
+    setBeatMovies(movies || []);
+    setFilteredMovies(isShort ? filterShortMovies(movies) : movies || [])
+  }, [isShort])
 
   //Менять переменную состояния, если не найдены фильмы
   useEffect(() => {
-    setIsMoviesNotFound(beatMovies.length === 0 && localStorage.getItem('moviesSearch'));
-  }, [beatMovies])
+    setIsMoviesNotFound(filteredMovies.length === 0 && localStorage.getItem('moviesSearch'));
+  }, [filteredMovies])
 
   return (
     <>
@@ -63,11 +79,11 @@ function Movies(props) {
           <SearchForm
             onSearch={getAndFilterBeatMovies}
             isShort={isShort}
-            handleIsShort={handleIsShort}
+            handleIsShort={handleShortMovies}
           />
-          {props.isLoading ? <Preloader /> :
+          {isMoviesLoading ? <Preloader /> :
             <MoviesCardList
-              movies={beatMovies}
+              movies={filteredMovies}
               isMoviesNotFound={isMoviesNotFound} />}
         </main>
       </div>
