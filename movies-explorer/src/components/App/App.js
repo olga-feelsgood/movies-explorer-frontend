@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import Main from '../Main/Main.js';
 import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/Savedmovies.js';
@@ -7,14 +7,39 @@ import Register from '../Register/Register.js';
 import Login from '../Login/Login.js';
 import NotFound from '../NotFound/Notfound.js';
 import './App.css';
-import { registerNewUser, loginUser } from '../../utils/Auth.js';
-import { useState } from 'react';
+import { registerNewUser, loginUser, getContent } from '../../utils/Auth.js';
+import { useState, useEffect } from 'react';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
+import mainApi from '../../utils/MainApi.js';
 
 function App() {
 
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [message, setMessage] = useState([]);
+
+  const [currentUser, setCurrentUser] = useState({});
+
+  useEffect(() => {
+    checkToken();
+  }, [])
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      return;
+    }
+    mainApi.updateTokenInHeaders();
+
+    Promise.all([mainApi.getUserInfo(), mainApi.getInitialCards()])
+      .then(([userData, cardsData]) => {
+        setCurrentUser(userData);
+        // setCards(cardsData)
+      })
+      .catch((err) => { console.log(err) })
+  }, [isLoggedIn])
+
+
+
 
   //Регистрация пользователя
   function handleRegisterUser({ name, email, password }) {
@@ -59,19 +84,81 @@ function App() {
       })
   }
 
+  //Обновление информации о пользователе
+  function handleUpdateUser({ name, email }) {
+    mainApi.setUserInfo({ name, email })
+      .then((userInfo) => {
+        setCurrentUser(userInfo);
+        // closeAllPopups();
+      })
+      .catch((err) => {
+        console.log(err);
+        if (err === 'Что-то пошло не так: 409') {
+          const errorMessage = 'Пользователь с таким email уже существует'
+          setMessage(errorMessage);
+        } else {
+          const errorMessage = 'При обновлении профиля произошла ошибка'
+          setMessage(errorMessage)
+        }
+      })
+  }
+
+  function checkToken() {
+    const token = localStorage.getItem('token')
+    if (token) {
+      getContent(token)
+        .then((res) => {
+          setIsLoggedIn(true);
+          // navigate("/", { replace: true })
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  }
+
+  function signOut() {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    localStorage.clear();
+    navigate('/');
+  }
+
+console.log(`isLoggedIn ${isLoggedIn}`);
+
+
 
   return (
-    <>
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/movies' element={<Movies />} />
-        <Route path='/saved-movies' element={<SavedMovies />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/signup' element={<Register onRegisterUser={handleRegisterUser} message={message} />} />
-        <Route path='/signin' element={<Login onLoginUser={handleLoginUser} message={message} />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-    </>
+    <CurrentUserContext.Provider value={currentUser}>
+      <>
+        <Routes>
+          <Route path='/'
+            element={<Main
+              isLoggedIn={isLoggedIn} />} />
+          <Route path='/movies'
+            element={<Movies
+              isLoggedIn={isLoggedIn} />} />
+          <Route path='/saved-movies'
+            element={<SavedMovies
+              isLoggedIn={isLoggedIn} />} />
+          <Route path='/profile'
+            element={<Profile
+              isLoggedIn={isLoggedIn}
+              onUpdateUser={handleUpdateUser}
+              message={message}
+              onSignOut={signOut} />} />
+          <Route path='/signup'
+            element={!isLoggedIn? <Register
+              onRegisterUser={handleRegisterUser}
+              message={message} /> : <Navigate to='/movies'/>} />
+          <Route path='/signin'
+            element={!isLoggedIn? <Login
+              onLoginUser={handleLoginUser}
+              message={message} /> : <Navigate to='/movies'/>} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </>
+    </CurrentUserContext.Provider>
   );
 }
 

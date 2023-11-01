@@ -53,13 +53,13 @@ function Movies(props) {
     }
   };
 
-//Изменять состояние чекбокса
+  //Изменять состояние чекбокса
   useEffect(() => {
     const short = localStorage.getItem('short') === 'true';
     setIsShort(short);
   }, [])
 
-//При изменениии чекбокса короткометражек заново фильтровать фильмы
+  //При изменениии чекбокса короткометражек заново фильтровать фильмы
   useEffect(() => {
     const movies = JSON.parse(localStorage.getItem('allBeatMovies'));
     setBeatMovies(movies || []);
@@ -74,7 +74,8 @@ function Movies(props) {
   return (
     <>
       <div className='wrapper'>
-        <Header />
+        <Header
+          isLoggedIn={props.isLoggedIn} />
         <main className='movies'>
           <SearchForm
             onSearch={getAndFilterBeatMovies}

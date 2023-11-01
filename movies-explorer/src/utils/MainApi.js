@@ -22,28 +22,17 @@ class MainApi {
       .then(this._checkRes)
   }
 
-  setUserInfo(name, about) {
+  setUserInfo(name, email) {
     return fetch(`${this._url}/users/me`, {
       headers: this._headers,
       method: 'PATCH',
-      body: JSON.stringify(name, about)
+      body: JSON.stringify(name, email)
     })
       .then(this._checkRes)
   }
-
-  updateProfileAvatar(avatar) {
-    return fetch(`${this._url}/users/me/avatar`, {
-      headers: this._headers,
-      method: 'PATCH',
-      body: JSON.stringify(avatar)
-    })
-      .then(this._checkRes)
-  }
-
-
 
   getInitialCards() {
-    return fetch(`${this._url}/cards`, {
+    return fetch(`${this._url}/movies`, {
       headers: this._headers
     })
       .then(this._checkRes)
@@ -97,7 +86,6 @@ class MainApi {
 
 const mainApi = new MainApi({
   url: BASE_URL,
-  // url: 'http://localhost:3000',
   headers: {
     'Authorization': `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json',

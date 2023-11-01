@@ -5,11 +5,12 @@ import Footer from '../Footer/Footer.js';
 import Header from '../Header/Header.js';
 
 
-function SavedMovies() {
+function SavedMovies(props) {
   return (
     <>
       <div className='wrapper'>
-        <Header />
+        <Header
+          isLoggedIn={props.isLoggedIn} />
         <main className='saved-movies'>
           <SearchForm />
           <MoviesCardList />
