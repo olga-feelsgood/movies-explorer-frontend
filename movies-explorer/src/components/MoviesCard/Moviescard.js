@@ -7,10 +7,13 @@ import moviesApi from '../../utils/MoviesApi';
 function MoviesCard(props) {
 
   const location = useLocation();
-  const [isLiked, setIsLiked] = useState(false);
+  // const [isLiked, setIsLiked] = useState(false);
 
-  function likeMovie() {
-    setIsLiked(true)
+  function likeOrDislikeMovie() {
+    if(props.isLiked) {//удалить
+    } else {
+      props.onLike(props.movie);
+    }
   }
 
   function formatTime(duration) {
@@ -29,7 +32,7 @@ function MoviesCard(props) {
           <h2 className='movies-card__title'>{props.movie.nameRU}</h2>
           {location.pathname === '/saved-movies'
             ? <button type='button' className='movies-card__button movies-card__button_type_delete' />
-            : <button onClick={likeMovie} type='button' className={isLiked ? 'movies-card__button movies-card__button_type_save' : 'movies-card__button'} />
+            : <button onClick={likeOrDislikeMovie} type='button' className={props.isLiked ? 'movies-card__button movies-card__button_type_save' : 'movies-card__button'} />
           }
         </div>
         <p className='movies-card__text'>{formatTime(props.movie.duration)}</p>

@@ -85,7 +85,9 @@ function Movies(props) {
           {isMoviesLoading ? <Preloader /> :
             <MoviesCardList
               movies={filteredMovies}
-              isMoviesNotFound={isMoviesNotFound} />}
+              isMoviesNotFound={isMoviesNotFound}
+              onLike={props.onLike}
+              savedMovies={props.savedMovies}/>}
         </main>
       </div>
       <Footer />

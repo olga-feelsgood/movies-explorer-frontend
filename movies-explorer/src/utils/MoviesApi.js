@@ -23,9 +23,7 @@ class MoviesApi {
 
 const moviesApi = new MoviesApi({
   url: 'https://api.nomoreparties.co',
-  // url: 'http://localhost:3000',
   headers: {
-    //  'Authorization': `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json',
   }
 })

@@ -11,14 +11,17 @@ import { registerNewUser, loginUser, getContent } from '../../utils/Auth.js';
 import { useState, useEffect } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import mainApi from '../../utils/MainApi.js';
+import moviesApi from '../../utils/MoviesApi';
 
 function App() {
 
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [message, setMessage] = useState([]);
+  const [message, setMessage] = useState([]);//ошибки от сервера
 
   const [currentUser, setCurrentUser] = useState({});
+
+  const [savedMovies, setSavedMovies] = useState([]);//сохраненные фильмы
 
   useEffect(() => {
     checkToken();
@@ -38,9 +41,6 @@ function App() {
       .catch((err) => { console.log(err) })
   }, [isLoggedIn])
 
-
-
-
   //Регистрация пользователя
   function handleRegisterUser({ name, email, password }) {
     console.log({ name, email, password })
@@ -48,10 +48,8 @@ function App() {
       .then(() => {
         console.log('вы зарегистрировались');
         handleLoginUser({ email, password });
-        // handleSuccessInfotoolTipOpen();
       })
       .catch((err) => {
-        // handleFailInfotoolTipOpen();
         console.log(err);
         if (err === 'Что-то пошло не так: 409') {
           const errormessage = 'Пользователь с таким email уже существует'
@@ -89,7 +87,6 @@ function App() {
     mainApi.setUserInfo({ name, email })
       .then((userInfo) => {
         setCurrentUser(userInfo);
-        // closeAllPopups();
       })
       .catch((err) => {
         console.log(err);
@@ -109,7 +106,6 @@ function App() {
       getContent(token)
         .then((res) => {
           setIsLoggedIn(true);
-          // navigate("/", { replace: true })
         })
         .catch((err) => {
           console.log(err)
@@ -117,16 +113,44 @@ function App() {
     }
   }
 
+
+  function handleMovieLike(movie) {
+    console.log(movie.image.url)
+    mainApi.createMovie({
+      country: movie.country,
+      director: movie.director,
+      duration: String(movie.duration),
+      year: movie.year,
+      description: movie.description,
+      image: moviesApi._url + movie.image.url,
+      trailerLink: movie.trailerLink,
+      thumbnail: moviesApi._url + movie.image.formats.thumbnail.url,
+      movieId: movie.id,
+      nameRU: movie.nameRU,
+      nameEN: movie.nameEN,
+    })
+      .then((newMovie) => {
+        console.log(newMovie);
+        setSavedMovies([newMovie, ...savedMovies])
+      })
+      .catch((err) => { console.log(err) })
+  }
+
+  // function handleCardDelete(card) {
+  //   api.deleteCard(card._id)
+  //     .then(() => {
+  //       setCards((state) => state.filter((c) => { if (!(c._id === card._id)) { return c } })
+  //       )
+  //     })
+  //     .catch((err) => { console.log(err) })
+  // }
+
   function signOut() {
     localStorage.removeItem('token');
     setIsLoggedIn(false);
     localStorage.clear();
     navigate('/');
   }
-
-console.log(`isLoggedIn ${isLoggedIn}`);
-
-
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -137,7 +161,9 @@ console.log(`isLoggedIn ${isLoggedIn}`);
               isLoggedIn={isLoggedIn} />} />
           <Route path='/movies'
             element={<Movies
-              isLoggedIn={isLoggedIn} />} />
+              isLoggedIn={isLoggedIn}
+              onLike={handleMovieLike}
+              savedMovies={savedMovies}/>} />
           <Route path='/saved-movies'
             element={<SavedMovies
               isLoggedIn={isLoggedIn} />} />

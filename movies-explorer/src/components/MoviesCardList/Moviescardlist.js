@@ -44,6 +44,10 @@ function MoviesCardList(props) {
     return props.movies.slice(0, moviesToDisplay).length === props.movies.length ? false : true;
   })();
 
+  function checkIsLiked(savedMoviesList, movie) {
+    return savedMoviesList.find((savedMoviesList)=>savedMoviesList.movieId === movie.id);
+  }
+
   return (
     <section className='movies-cardlist'>
       {props.isMoviesNotFound ? <p className='movies-cardlist__notfound'>Ничего не найдено</p> : undefined}
@@ -52,6 +56,10 @@ function MoviesCardList(props) {
           <MoviesCard
             movie={movie}
             key={movie.id}
+            onLike={props.onLike}
+            savedMovies={props.savedMovies}
+            isSaved={false}
+            isLiked={checkIsLiked(props.savedMovies, movie)}
           />)}
       </ul>
       {isAddButtonActive ? <button type='button' className='movies-cardlist__button' onClick={addMoreMoviesButtonClick}>Еще</button> : undefined}

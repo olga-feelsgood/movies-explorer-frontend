@@ -38,11 +38,12 @@ class MainApi {
       .then(this._checkRes)
   }
 
-  createCard({ name, link }) {
-    return fetch(`${this._url}/cards`, {
+  createMovie(data) {
+    // console.log(JSON.stringify(data))
+    return fetch(`${this._url}/movies`, {
       headers: this._headers,
       method: 'POST',
-      body: JSON.stringify({ name, link })
+      body: JSON.stringify(data),
     })
       .then(this._checkRes)
   }
