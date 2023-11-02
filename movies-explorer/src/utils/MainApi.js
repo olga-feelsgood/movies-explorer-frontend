@@ -39,7 +39,7 @@ class MainApi {
   }
 
   createMovie(data) {
-    // console.log(JSON.stringify(data))
+    console.log(JSON.stringify(data))
     return fetch(`${this._url}/movies`, {
       headers: this._headers,
       method: 'POST',
@@ -48,33 +48,12 @@ class MainApi {
       .then(this._checkRes)
   }
 
-  deleteCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}`, {
+  deleteMovie(movieId) {
+    return fetch(`${this._url}/movies/${movieId}`, {
       headers: this._headers,
       method: 'DELETE'
     })
       .then(this._checkRes)
-  }
-
-  _addLikeToCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
-      headers: this._headers,
-      method: 'PUT',
-    })
-      .then(this._checkRes)
-  }
-
-  _removeLikeFromCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
-      headers: this._headers,
-      method: 'DELETE',
-    })
-      .then(this._checkRes)
-  }
-
-  changeLikeCardStatus(cardId, isLiked) {
-    if (isLiked) { return this._addLikeToCard(cardId) }
-    else { return this._removeLikeFromCard(cardId) }
   }
 
   updateTokenInHeaders() {

@@ -57,8 +57,8 @@ function MoviesCardList(props) {
             movie={movie}
             key={movie.id}
             onLike={props.onLike}
+            onDislike={props.onDislike}
             savedMovies={props.savedMovies}
-            isSaved={false}
             isLiked={checkIsLiked(props.savedMovies, movie)}
           />)}
       </ul>

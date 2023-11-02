@@ -87,7 +87,8 @@ function Movies(props) {
               movies={filteredMovies}
               isMoviesNotFound={isMoviesNotFound}
               onLike={props.onLike}
-              savedMovies={props.savedMovies}/>}
+              savedMovies={props.savedMovies}
+              onDislike={props.onDislike}/>}
         </main>
       </div>
       <Footer />

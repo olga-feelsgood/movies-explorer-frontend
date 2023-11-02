@@ -115,7 +115,6 @@ function App() {
 
 
   function handleMovieLike(movie) {
-    console.log(movie.image.url)
     mainApi.createMovie({
       country: movie.country,
       director: movie.director,
@@ -136,14 +135,14 @@ function App() {
       .catch((err) => { console.log(err) })
   }
 
-  // function handleCardDelete(card) {
-  //   api.deleteCard(card._id)
-  //     .then(() => {
-  //       setCards((state) => state.filter((c) => { if (!(c._id === card._id)) { return c } })
-  //       )
-  //     })
-  //     .catch((err) => { console.log(err) })
-  // }
+  function handleMovieDislike(movie) {
+    mainApi.deleteMovie(movie._id)
+      .then(() => {
+        setSavedMovies((state) => state.filter((c) => { if (!(c._id === movie._id)) { return c } })
+        )
+      })
+      .catch((err) => { console.log(err) })
+  }
 
   function signOut() {
     localStorage.removeItem('token');
@@ -163,10 +162,14 @@ function App() {
             element={<Movies
               isLoggedIn={isLoggedIn}
               onLike={handleMovieLike}
+              onDislike={handleMovieDislike}
               savedMovies={savedMovies}/>} />
           <Route path='/saved-movies'
             element={<SavedMovies
-              isLoggedIn={isLoggedIn} />} />
+              isLoggedIn={isLoggedIn}
+              onLike={handleMovieLike}
+              onDislike={handleMovieDislike}
+              savedMovies={savedMovies}/>} />
           <Route path='/profile'
             element={<Profile
               isLoggedIn={isLoggedIn}

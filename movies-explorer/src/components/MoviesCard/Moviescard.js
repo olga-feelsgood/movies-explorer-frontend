@@ -7,10 +7,10 @@ import moviesApi from '../../utils/MoviesApi';
 function MoviesCard(props) {
 
   const location = useLocation();
-  // const [isLiked, setIsLiked] = useState(false);
 
   function likeOrDislikeMovie() {
-    if(props.isLiked) {//удалить
+    if(props.isLiked) {
+      props.onDislike(props.savedMovies.find((c)=>c.movieId === props.movie.id))
     } else {
       props.onLike(props.movie);
     }
