@@ -33,13 +33,13 @@ function App() {
     }
     mainApi.updateTokenInHeaders();
 
-    Promise.all([mainApi.getUserInfo(), mainApi.getInitialCards()])
-      .then(([userData, cardsData]) => {
+    Promise.all([mainApi.getUserInfo(), mainApi.getInitialMovies()])
+      .then(([userData, initialMovies]) => {
         setCurrentUser(userData);
-        // setCards(cardsData)
+        setSavedMovies(initialMovies);
       })
       .catch((err) => { console.log(err) })
-  }, [isLoggedIn])
+  }, [isLoggedIn, navigate])
 
   //Регистрация пользователя
   function handleRegisterUser({ name, email, password }) {

@@ -11,6 +11,7 @@ import {
   addMoviesNumberTablet,
   addMoviesNumberMiniTabletOrMobile
 } from '../../utils/constants.js'
+import { useLocation } from 'react-router-dom';
 
 function MoviesCardList(props) {
 
@@ -20,6 +21,7 @@ function MoviesCardList(props) {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [moviesToDisplay, setMoviesToDisplay] = useState(0);// сколько фильмов отображать
+const location = useLocation();
 
   useEffect(() => {
     const initialNumber = (() => {
@@ -55,14 +57,14 @@ function MoviesCardList(props) {
         {props.movies.slice(0, moviesToDisplay).map(movie =>
           <MoviesCard
             movie={movie}
-            key={movie.id}
+            key={movie.id || movie.movieId}
             onLike={props.onLike}
             onDislike={props.onDislike}
             savedMovies={props.savedMovies}
             isLiked={checkIsLiked(props.savedMovies, movie)}
           />)}
       </ul>
-      {isAddButtonActive ? <button type='button' className='movies-cardlist__button' onClick={addMoreMoviesButtonClick}>Еще</button> : undefined}
+      {location.pathname === '/movies'&& isAddButtonActive ? <button type='button' className='movies-cardlist__button' onClick={addMoreMoviesButtonClick}>Еще</button> : undefined}
     </section>
   );
 }

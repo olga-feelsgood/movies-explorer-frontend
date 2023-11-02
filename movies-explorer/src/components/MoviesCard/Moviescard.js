@@ -26,8 +26,6 @@ function deleteMovie() {
     return hour ? `${hour}ч ${min}м` : `${min}м`;
   }
 
-  console.log(props.movie.image)
-
   return (
     <li className='movies-card'>
       <a className='movies-card__trailer-link link' target='_blank' rel='noreferrer' href={props.movie.trailerLink}>

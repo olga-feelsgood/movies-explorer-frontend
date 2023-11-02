@@ -31,7 +31,7 @@ class MainApi {
       .then(this._checkRes)
   }
 
-  getInitialCards() {
+  getInitialMovies() {
     return fetch(`${this._url}/movies`, {
       headers: this._headers
     })

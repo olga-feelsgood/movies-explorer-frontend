@@ -38,6 +38,7 @@ function Movies(props) {
   //Получить фильмы от beatmovies и отфильтровать по запросу
   function getAndFilterBeatMovies(query) {
     localStorage.setItem('moviesSearch', query);//сохранить историю
+    console.log(localStorage.getItem('moviesSearch'))
     // localStorage.clear();
     const allBeatMovies = JSON.parse(localStorage.getItem('allBeatMovies'));
     if (allBeatMovies) {
