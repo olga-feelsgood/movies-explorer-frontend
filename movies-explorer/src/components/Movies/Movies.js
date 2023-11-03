@@ -38,7 +38,6 @@ function Movies(props) {
   //Получить фильмы от beatmovies и отфильтровать по запросу
   function getAndFilterBeatMovies(query) {
     localStorage.setItem('moviesSearch', query);//сохранить историю
-    console.log(localStorage.getItem('moviesSearch'))
     // localStorage.clear();
     const allBeatMovies = JSON.parse(localStorage.getItem('allBeatMovies'));
     if (allBeatMovies) {
@@ -60,10 +59,10 @@ function Movies(props) {
     setIsShort(short);
   }, [])
 
-  //При изменениии чекбокса короткометражек заново фильтровать фильмы
+  //При изменениии чекбокса короткометражек заново фильтровать отфильтрованные фильмы
   useEffect(() => {
-    const movies = JSON.parse(localStorage.getItem('allBeatMovies'));
-    setBeatMovies(movies || []);
+    const movies = JSON.parse(localStorage.getItem('filteredMovies'));
+    // setBeatMovies(movies || []);
     setFilteredMovies(isShort ? filterShortMovies(movies) : movies || [])
   }, [isShort])
 
@@ -89,7 +88,7 @@ function Movies(props) {
               isMoviesNotFound={isMoviesNotFound}
               onLike={props.onLike}
               savedMovies={props.savedMovies}
-              onDislike={props.onDislike}/>}
+              onDislike={props.onDislike} />}
         </main>
       </div>
       <Footer />

@@ -1,22 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Searchform.css';
 import '../Section/Section.css';
 import FilterCheckBox from '../FilterCheckBox/Filtercheckbox';
+import { useLocation } from 'react-router-dom';
 
 function SearchForm(props) {
 
-const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [emptySearch, setEmptySearch] = useState(false);
+  const location = useLocation();
 
   const changeSearchQuery = (evt) => {
-   setSearchQuery(evt.target.value);
-    console.log(searchQuery);
+    setSearchQuery(evt.target.value);
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    props.onSearch(searchQuery);
-
+    console.log(searchQuery);
+    console.log(emptySearch);
+    if (searchQuery.length === 0) {
+      setEmptySearch(true);
+    } else {
+      setEmptySearch(false);
+      props.onSearch(searchQuery);
+    }
   }
+
+  useEffect(() => {
+    if (location.pathname === '/movies' && localStorage.getItem('moviesSearch')) {
+      const searchInput = localStorage.getItem('moviesSearch');
+      setSearchQuery(searchInput);
+    }
+  }, [location]);
+
   return (
 
     <div className='searchform section'>
@@ -24,18 +40,17 @@ const [searchQuery, setSearchQuery] = useState('');
         <input
           className='searchform__input'
           placeholder='Фильм'
-          required
           type='text'
-          minLength='1'
           value={searchQuery}
           onChange={changeSearchQuery}
         />
         <button className='searchform__button' type='submit'>Найти</button>
       </form>
+      <span className={emptySearch ?'searchform__error': 'searchform__error searchform__error_hidden'}>Нужно ввести ключевое слово</span>
       <div className='searchform__container'>
         <FilterCheckBox
-        isShort={props.isShort}
-        handleIsShort = {props.handleIsShort}/>
+          isShort={props.isShort}
+          handleIsShort={props.handleIsShort} />
       </div>
     </div>
   )
