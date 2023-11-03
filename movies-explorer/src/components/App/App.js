@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import mainApi from '../../utils/MainApi.js';
 import moviesApi from '../../utils/MoviesApi';
+import InfoTooltip from '../Infotooltip/InfoTooltip.js';
 
 function App() {
 
@@ -22,6 +23,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
 
   const [savedMovies, setSavedMovies] = useState([]);//сохраненные фильмы
+
+  const [infotoolTipOpen, setInfotoolTipOpen] = useState(true);//открыть/закрыть popup
+  const [infoMessage, setInfoMessage] = useState('');//текст для popup
+  const [isSuccessMessage, setIsSuccessMessage] = useState(false);//сообщение об ошибке или успехе
 
   useEffect(() => {
     checkToken();
@@ -46,7 +51,6 @@ function App() {
     console.log({ name, email, password })
     registerNewUser({ name, email, password })
       .then(() => {
-        console.log('вы зарегистрировались');
         handleLoginUser({ email, password });
       })
       .catch((err) => {
@@ -87,6 +91,9 @@ function App() {
     mainApi.setUserInfo({ name, email })
       .then((userInfo) => {
         setCurrentUser(userInfo);
+        setInfotoolTipOpen(true);
+        setIsSuccessMessage(true);
+        setInfoMessage('Данные пользователя успешно изменены')
       })
       .catch((err) => {
         console.log(err);
@@ -151,6 +158,10 @@ function App() {
     navigate('/');
   }
 
+  function closePopup() {
+    setInfotoolTipOpen(false);
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <>
@@ -186,6 +197,12 @@ function App() {
               message={message} /> : <Navigate to='/movies'/>} />
           <Route path='*' element={<NotFound />} />
         </Routes>
+        <InfoTooltip
+        isOpen={infotoolTipOpen}
+        isSuccess={isSuccessMessage}
+        message={infoMessage}
+        onClose={closePopup}
+        />
       </>
     </CurrentUserContext.Provider>
   );
