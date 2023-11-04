@@ -1,3 +1,5 @@
+import './App.css';
+import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import Main from '../Main/Main.js';
 import Movies from '../Movies/Movies.js';
@@ -6,14 +8,12 @@ import Profile from '../Profile/Profile.js';
 import Register from '../Register/Register.js';
 import Login from '../Login/Login.js';
 import NotFound from '../NotFound/Notfound.js';
-import './App.css';
+import InfoTooltip from '../Infotooltip/InfoTooltip.js';
+import ProtectedRoute from '../../utils/ProtectedRoute.js';
 import { registerNewUser, loginUser, getContent } from '../../utils/Auth.js';
-import { useState, useEffect } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import mainApi from '../../utils/MainApi.js';
 import moviesApi from '../../utils/MoviesApi';
-import InfoTooltip from '../Infotooltip/InfoTooltip.js';
-import ProtectedRoute from '../../utils/ProtectedRoute.js';
 
 function App() {
 
@@ -120,7 +120,6 @@ function App() {
         })
     }
   }
-
 
   function handleMovieLike(movie) {
     mainApi.createMovie({

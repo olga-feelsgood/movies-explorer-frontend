@@ -3,7 +3,6 @@ import success from '../../images/success.png';
 import './InfoTooltip.css';
 
 function InfoTooltip(props) {
-
   return (
     <div className={`popup ${props.isOpen && 'popup_opened'}`}>
       <div className="popup__container">

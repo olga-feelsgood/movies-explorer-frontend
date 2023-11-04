@@ -61,7 +61,6 @@
   flex-direction: row;
 }
 
-
 @media(max-width: 768px) {
   .searchform {
     padding: 75px 30px 61px;

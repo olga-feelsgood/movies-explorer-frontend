@@ -86,7 +86,6 @@
 
 .form-template__button {
   margin: 20px 0px 17px;
-  /* margin: 128px 0px 17px; */
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -102,10 +101,6 @@
   background-color: #F8F8F8;
   color: #C2C2C2;
 }
-
-/* .form-template__button_type_lower {
-  margin-top: 198px;
-} */
 
 .form-template__redirect {
   all: unset;
@@ -165,10 +160,10 @@
   }
 
   .form-template__server-error {
-    margin-top: 181px;}
+    margin-top: 181px;
+  }
 
   .form-template__button {
-    /* margin-top: 219px; */
     font-size: 12px;
     line-height: 15px;
   }
@@ -177,10 +172,6 @@
     font-size: 12px;
     line-height: 15px;
   }
-
-  /* .form-template__button_type_lower {
-    margin-top: 287px;
-  } */
 
   .form-template__server-error_type_lower {
     margin-top: 250px;

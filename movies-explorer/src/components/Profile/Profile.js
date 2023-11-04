@@ -81,8 +81,12 @@ function Profile(props) {
           <div className='profile__buttons'>
             {isEditMode ?
               <>
-                <span className={props.message ? 'profile__error profile__error_position_low' : 'profile__error profile__error_position_low profile__error_hidden'}>{props.message}</span>
-                <button className={isFormValid && !isAsTheLastValue ? 'profile__save-button link' : 'profile__save-button profile__save-button_disabled link'} type='submit' disabled={!isFormValid || isAsTheLastValue ? true : false}>Сохранить</button>
+                <span className={props.message ? 'profile__error profile__error_position_low'
+                  : 'profile__error profile__error_position_low profile__error_hidden'}>{props.message}</span>
+                <button className={isFormValid && !isAsTheLastValue
+                  ? 'profile__save-button link'
+                  : 'profile__save-button profile__save-button_disabled link'}
+                  type='submit' disabled={!isFormValid || isAsTheLastValue ? true : false}>Сохранить</button>
               </>
               :
               <>

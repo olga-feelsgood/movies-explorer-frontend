@@ -20,14 +20,9 @@ function FormTemplate(props) {
             {props.children}
           </fieldset>
           <>
-            {props.errorMessage ? <span className={pathname === '/signin' ?'form-template__server-error form-template__server-error_type_lower':'form-template__server-error'}>{props.errorMessage}</span> : <span className='form-template__server-error form-template__server-error_hidden'></span>}
+            {props.errorMessage ? <span className={pathname === '/signin' ? 'form-template__server-error form-template__server-error_type_lower' : 'form-template__server-error'}>{props.errorMessage}</span> : <span className='form-template__server-error form-template__server-error_hidden'></span>}
             <button className={`form-template__button link ${!props.isValid && 'form-template__button_disabled'}`} type='submit' disabled={!props.isValid}>{props.buttonTitle}</button>
           </>
-          {/* <>
-            {props.errorMessage ? <span className='form-template__server-error'>{props.errorMessage}</span> : <span className='form-template__server-error form-template__server-error_hidden'></span>}
-            <button className={pathname === '/signin' ? `form-template__button form-template__button_type_lower link ${!props.isValid && 'form-template__button_disabled'}`
-              : `form-template__button link ${!props.isValid && 'form-template__button_disabled'}`} type='submit'>{props.buttonTitle}</button>
-          </> */}
         </form>
       </div>
       <p className='form-template__redirect'>{props.redirectText}

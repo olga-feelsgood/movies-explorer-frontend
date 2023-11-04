@@ -40,7 +40,6 @@ function SavedMovies(props) {
     }
   }, [props.savedMovies, isShort, inputQuery])
 
-
   return (
     <>
       <div className='wrapper'>

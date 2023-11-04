@@ -21,9 +21,6 @@ function Register(props) {
     });
   }
 
-  console.log(props.message)
-
-
   return (
     <main className='main'>
       <FormTemplate
@@ -48,7 +45,7 @@ function Register(props) {
                 minLength='2'
                 maxLength='30'
                 placeholder='Имя'
-                pattern = {userNameRegex}
+                pattern={userNameRegex}
                 value={inputValues.name || ''}
                 onChange={handleChange}
               />
