@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import FormTemplate from '../FormTemplate/Formtemplate.js';
 import useForm from '../../utils/useForm';
+import { emailRegex } from '../../utils/constants';
 
 function Login(props) {
 
@@ -40,6 +41,7 @@ function Login(props) {
                 name='email'
                 autoComplete='on'
                 placeholder='E-mail'
+                pattern={emailRegex}
                 value={inputValues.email || ''}
                 onChange={handleChange}
               />

@@ -13,6 +13,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
 import mainApi from '../../utils/MainApi.js';
 import moviesApi from '../../utils/MoviesApi';
 import InfoTooltip from '../Infotooltip/InfoTooltip.js';
+import ProtectedRoute from '../../utils/ProtectedRoute.js';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 
   const [savedMovies, setSavedMovies] = useState([]);//сохраненные фильмы
 
-  const [infotoolTipOpen, setInfotoolTipOpen] = useState(true);//открыть/закрыть popup
+  const [infotoolTipOpen, setInfotoolTipOpen] = useState(false);//открыть/закрыть popup
   const [infoMessage, setInfoMessage] = useState('');//текст для popup
   const [isSuccessMessage, setIsSuccessMessage] = useState(false);//сообщение об ошибке или успехе
 
@@ -170,38 +171,41 @@ function App() {
             element={<Main
               isLoggedIn={isLoggedIn} />} />
           <Route path='/movies'
-            element={<Movies
+            element={<ProtectedRoute
+              element={Movies}
               isLoggedIn={isLoggedIn}
               onLike={handleMovieLike}
               onDislike={handleMovieDislike}
-              savedMovies={savedMovies}/>} />
+              savedMovies={savedMovies} />} />
           <Route path='/saved-movies'
-            element={<SavedMovies
+            element={<ProtectedRoute
+              element={SavedMovies}
               isLoggedIn={isLoggedIn}
               onLike={handleMovieLike}
               onDislike={handleMovieDislike}
-              savedMovies={savedMovies}/>} />
+              savedMovies={savedMovies} />} />
           <Route path='/profile'
-            element={<Profile
+            element={<ProtectedRoute
+              element={Profile}
               isLoggedIn={isLoggedIn}
               onUpdateUser={handleUpdateUser}
               message={message}
               onSignOut={signOut} />} />
           <Route path='/signup'
-            element={!isLoggedIn? <Register
+            element={!isLoggedIn ? <Register
               onRegisterUser={handleRegisterUser}
-              message={message} /> : <Navigate to='/movies'/>} />
+              message={message} /> : <Navigate to='/movies' />} />
           <Route path='/signin'
-            element={!isLoggedIn? <Login
+            element={!isLoggedIn ? <Login
               onLoginUser={handleLoginUser}
-              message={message} /> : <Navigate to='/movies'/>} />
+              message={message} /> : <Navigate to='/movies' />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <InfoTooltip
-        isOpen={infotoolTipOpen}
-        isSuccess={isSuccessMessage}
-        message={infoMessage}
-        onClose={closePopup}
+          isOpen={infotoolTipOpen}
+          isSuccess={isSuccessMessage}
+          message={infoMessage}
+          onClose={closePopup}
         />
       </>
     </CurrentUserContext.Provider>
