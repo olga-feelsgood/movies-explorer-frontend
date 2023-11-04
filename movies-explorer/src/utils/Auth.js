@@ -1,5 +1,5 @@
-// export const BASE_URL = 'http://movies-app.nomoredomainsicu.ru/api';
-export const BASE_URL = 'http://localhost:3000/api';
+export const BASE_URL = 'https://api.movies-app.nomoredomainsicu.ru';
+// export const BASE_URL = 'http://localhost:3000/api';
 
 function checkRes(res) {
   if (res.ok) {
