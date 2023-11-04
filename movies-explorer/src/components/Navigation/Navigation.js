@@ -25,7 +25,9 @@ function Navigation() {
           ? `navigation__link ${pathname === '/saved-movies' && 'navigation__link_active'} link`
           : `navigation__link ${pathname === '/saved-movies' && 'navigation__link_active'} link navigation__link_color_white`}>Сохраненные фильмы</NavLink>
       </nav>
-      <ProfileButton />
+      <div className='navigation__profile-button'>
+        <ProfileButton />
+      </div>
 
       <div className='burger'>
         <div className={isBurgerOpen ? 'burger__wrapper' : undefined} onClick={openOrCloseBurger}>
