@@ -67,7 +67,7 @@
   display: block;
   width: 28px;
   height: 3px;
-  z-index: 3;
+  z-index: 10;
   transition: opacity .1s, transfrom .5s;
 }
 
