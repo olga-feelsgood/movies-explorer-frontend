@@ -35,6 +35,7 @@ function Profile(props) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
+    props.setMessage(false);
     props.onUpdateUser({
       name: inputValues.name,
       email: inputValues.email,

@@ -192,6 +192,7 @@ function App() {
               isLoggedIn={isLoggedIn}
               onUpdateUser={handleUpdateUser}
               message={message}
+              setMessage={setMessage} 
               onSignOut={signOut} />} />
           <Route path='/signup'
             element={!isLoggedIn ? <Register
