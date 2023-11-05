@@ -1,4 +1,6 @@
 Макет light-1
+pull-request
+https://github.com/olga-feelsgood/movies-explorer-frontend/pull/2
 Сайт
 https://movies-app.nomoredomainsicu.ru/
 Api
