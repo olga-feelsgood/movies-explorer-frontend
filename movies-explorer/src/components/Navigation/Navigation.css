@@ -60,17 +60,7 @@
   right: 15px;
 }
 
-/* .burger__button span {
-  display: block;
-  background-color: black;
-  position: absolute;
-  display: block;
-  width: 28px;
-  height: 3px;
-  z-index: 3;
-  transition: opacity .1s, transfrom .5s;
-} */
-.burger__button-line {
+.burger__button span {
   display: block;
   background-color: black;
   position: absolute;
@@ -81,30 +71,18 @@
   transition: opacity .1s, transfrom .5s;
 }
 
-/* .burger__button_color_white span {
-  background-color: white;
-} */
-
-.burger__button-line_color_white {
+.burger__button_color_white span {
   background-color: white;
 }
 
-
-/* .burger__button span:nth-child(1) {
+.burger__button span:nth-child(1) {
   transform: translateY(-10px);
 }
 
 .burger__button span:nth-child(3) {
   transform: translateY(10px);
-} */
-
-.burger__button-line:nth-child(1) {
-  transform: translateY(-10px);
 }
 
-.burger__button-line:nth-child(3) {
-  transform: translateY(10px);
-}
 
 /* Крестик */
 
@@ -121,21 +99,6 @@
   width: 22px;
   transform: translateY(0px) rotate(-45deg);
 }
-
-
-/* .burger__wrapper .burger__button-line:nth-child(1) {
-  width: 22px;
-  transform: translateY(0px) rotate(45deg);
-}
-
-.burger__wrapper .burger__button-line:nth-child(2) {
-  opacity: 0;
-}
-
-.burger__wrapper .burger__button-line:nth-child(3) {
-  width: 22px;
-  transform: translateY(0px) rotate(-45deg);
-} */
 
 /* Бургер-меню */
 .burger__menu {
