@@ -68,7 +68,7 @@ function Movies(props) {
   //При изменениии чекбокса короткометражек заново фильтровать отфильтрованные фильмы
   useEffect(() => {
     const movies = JSON.parse(localStorage.getItem('filteredMovies'));
-    // setBeatMovies(movies || []);
+    setBeatMovies(movies || []);
     setFilteredMovies(isShort ? filterShortMovies(movies) : movies || [])
   }, [isShort])
 
