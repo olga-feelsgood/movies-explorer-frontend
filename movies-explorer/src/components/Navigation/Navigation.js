@@ -37,9 +37,6 @@ function Navigation() {
             <span></span>
             <span></span>
             <span></span>
-            {/* <span className={pathname !== '/' ? 'burger__button-line' : `burger__button-line ${!isBurgerOpen && 'burger__button-line_color_white'}`}></span>
-            <span className={pathname !== '/' ? 'burger__button-line' : `burger__button-line ${!isBurgerOpen && 'burger__button-line_color_white'}`}></span>
-            <span className={pathname !== '/' ? 'burger__button-line' : `burger__button-line ${!isBurgerOpen && 'burger__button-line_color_white'}`}></span> */}
           </button>
           <nav className={!isBurgerOpen ? 'burger__menu burger__menu_hidden' : 'burger__menu'}>
             <ul className='burger__list'>

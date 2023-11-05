@@ -168,6 +168,10 @@
   .burger {
     display: flex;
   }
+
+  .burger__button {
+    visibility: visible;
+  }
 }
 
 @media (max-width: 320px) {
