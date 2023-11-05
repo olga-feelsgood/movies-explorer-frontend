@@ -13,6 +13,7 @@ function Login(props) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
+    props.setMessage(false);
     props.onLoginUser({
       email: inputValues.email,
       password: inputValues.password,
@@ -60,7 +61,7 @@ function Login(props) {
               />
             </label>
             <span className='form-template__error'>{errors.password || ''}</span>
-          </>}/>
+          </>} />
     </main>
   )
 }

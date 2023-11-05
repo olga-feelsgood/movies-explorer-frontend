@@ -1,4 +1,8 @@
 Макет light-1
+Сайт
+https://movies-app.nomoredomainsicu.ru/
+Api
+http://api.movies-app.nomoredomainsmonster.ru/
 test
 # Getting Started with Create React App
 

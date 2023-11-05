@@ -175,7 +175,10 @@ function App() {
               isLoggedIn={isLoggedIn}
               onLike={handleMovieLike}
               onDislike={handleMovieDislike}
-              savedMovies={savedMovies} />} />
+              savedMovies={savedMovies}
+              setInfotoolTipOpen={setInfotoolTipOpen}
+              setIsSuccessMessage={setIsSuccessMessage}
+              setInfoMessage={setInfoMessage} />} />
           <Route path='/saved-movies'
             element={<ProtectedRoute
               element={SavedMovies}
@@ -193,11 +196,13 @@ function App() {
           <Route path='/signup'
             element={!isLoggedIn ? <Register
               onRegisterUser={handleRegisterUser}
-              message={message} /> : <Navigate to='/movies' />} />
+              message={message}
+              setMessage={setMessage} /> : <Navigate to='/movies' />} />
           <Route path='/signin'
             element={!isLoggedIn ? <Login
               onLoginUser={handleLoginUser}
-              message={message} /> : <Navigate to='/movies' />} />
+              message={message}
+              setMessage={setMessage} /> : <Navigate to='/movies' />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <InfoTooltip

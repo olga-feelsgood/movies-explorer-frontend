@@ -8,8 +8,6 @@ function FormTemplate(props) {
 
   let { pathname } = useLocation();
 
-  console.log(props.errorMessage)
-
   return (
     < div className='form-template' >
       <div className='form-template__container'>

@@ -48,7 +48,13 @@ function Movies(props) {
         .then((movies) => {
           handleFilterMovies(movies, isShort, query);
         })
-        .catch((err) => { console.log(err) })
+        .catch((err) => { 
+          if (err) {
+            props.setInfotoolTipOpen(true);
+            props.setIsSuccessMessage(false);
+            props.setInfoMessage('Во время запроса произошла ошибка. Возможно,проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
+          }
+         })
         .finally(() => { setIsMoviesLoading(false) })
     }
   };
