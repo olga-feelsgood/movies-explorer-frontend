@@ -6,6 +6,7 @@ import '../Link/Link.css';
 import Header from '../Header/Header.js';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import useForm from '../../utils/useForm';
+import { USERNAMEREGEX, EMAILREGEX } from '../../utils/constants';
 
 function Profile(props) {
 
@@ -59,6 +60,7 @@ function Profile(props) {
                 autoComplete='on'
                 minLength='2'
                 maxLength='30'
+                pattern={USERNAMEREGEX}
                 disabled={!isEditMode}
                 value={inputValues.name || ''}
                 onChange={handleChange}
@@ -72,6 +74,7 @@ function Profile(props) {
                 type='email'
                 name='email'
                 autoComplete='on'
+                pattern={EMAILREGEX}
                 value={inputValues.email || ''}
                 onChange={handleChange}
                 disabled={!isEditMode}

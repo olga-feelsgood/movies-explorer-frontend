@@ -3,13 +3,13 @@ import MoviesCard from '../MoviesCard/Moviescard.js'
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import {
-  initialMoviesNumberDesktop,
-  initialMoviesNumberMobile,
-  initialMoviesNumberMiniTablet,
-  initialMoviesNumberTablet,
-  addMoviesNumberDesktop,
-  addMoviesNumberTablet,
-  addMoviesNumberMiniTabletOrMobile
+  INITIALMOVIESNUMBERDESKTOP,
+  INITIALMOVIESNUMBERTABLET,
+  INITIALMOVIESNUMBERMINITABLET,
+  INITIALMOVIESNUMBERMOBILE,
+  ADDMOVIESNUMBERDESKTOP,
+  ADDMOVIESNUMBERTABLET,
+  ADDMOVIESNUMBERMINITABLETORMOBILE
 } from '../../utils/constants.js'
 import { useLocation } from 'react-router-dom';
 
@@ -21,23 +21,23 @@ function MoviesCardList(props) {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [moviesToDisplay, setMoviesToDisplay] = useState(0);// сколько фильмов отображать
-const location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     const initialNumber = (() => {
-      if (isMobile) { return initialMoviesNumberMobile; }
-      if (isTablet) { return initialMoviesNumberTablet; }
-      if (isMiniTablet) { return initialMoviesNumberMiniTablet; }
-      if (isDesktop) { return initialMoviesNumberDesktop }
+      if (isMobile) { return INITIALMOVIESNUMBERMOBILE; }
+      if (isTablet) { return INITIALMOVIESNUMBERTABLET; }
+      if (isMiniTablet) { return INITIALMOVIESNUMBERMINITABLET; }
+      if (isDesktop) { return INITIALMOVIESNUMBERDESKTOP }
     })();
     setMoviesToDisplay(initialNumber);
   }, [props.movies, isDesktop, isTablet, isMiniTablet, isMobile])
 
   const addMoreMoviesButtonClick = () => {
     const addMoreMovies = (() => {
-      if (isMobile || isMiniTablet) { return addMoviesNumberMiniTabletOrMobile; }
-      if (isTablet) { return addMoviesNumberTablet; }
-      if (isDesktop) { return addMoviesNumberDesktop; }
+      if (isMobile || isMiniTablet) { return ADDMOVIESNUMBERMINITABLETORMOBILE; }
+      if (isTablet) { return ADDMOVIESNUMBERTABLET; }
+      if (isDesktop) { return ADDMOVIESNUMBERDESKTOP; }
     })();
     setMoviesToDisplay(moviesToDisplay + addMoreMovies);
   };
@@ -47,7 +47,7 @@ const location = useLocation();
   })();
 
   function checkIsLiked(savedMoviesList, movie) {
-    return savedMoviesList.find((savedMoviesList)=>savedMoviesList.movieId === movie.id);
+    return savedMoviesList.find((savedMoviesList) => savedMoviesList.movieId === movie.id);
   }
 
   return (
@@ -64,7 +64,7 @@ const location = useLocation();
             isLiked={checkIsLiked(props.savedMovies, movie)}
           />)}
       </ul>
-      {location.pathname === '/movies'&& isAddButtonActive ? <button type='button' className='movies-cardlist__button' onClick={addMoreMoviesButtonClick}>Еще</button> : undefined}
+      {location.pathname === '/movies' && isAddButtonActive ? <button type='button' className='movies-cardlist__button' onClick={addMoreMoviesButtonClick}>Еще</button> : undefined}
     </section>
   );
 }

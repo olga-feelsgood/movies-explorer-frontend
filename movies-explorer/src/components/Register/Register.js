@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import '../Section/Section.css';
 import FormTemplate from '../FormTemplate/Formtemplate.js';
 import useForm from '../../utils/useForm';
-import { userNameRegex, emailRegex } from '../../utils/constants';
+import { USERNAMEREGEX,EMAILREGEX } from '../../utils/constants';
 
 function Register(props) {
 
@@ -46,7 +46,7 @@ function Register(props) {
                 minLength='2'
                 maxLength='30'
                 placeholder='Имя'
-                pattern={userNameRegex}
+                pattern={USERNAMEREGEX}
                 value={inputValues.name || ''}
                 onChange={handleChange}
               />
@@ -60,7 +60,7 @@ function Register(props) {
                 name='email'
                 autoComplete='on'
                 placeholder='E-mail'
-                pattern={emailRegex}
+                pattern={EMAILREGEX}
                 value={inputValues.email || ''}
                 onChange={handleChange}
               />
