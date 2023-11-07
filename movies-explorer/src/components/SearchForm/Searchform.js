@@ -26,6 +26,14 @@ function SearchForm(props) {
     }
   }
 
+  //При изменениии чекбокса короткометражек заново фильтровать фильмы по запросу
+  useEffect(() => {
+    const movies = JSON.parse(localStorage.getItem('allBeatMovies'));
+    if (!movies) { return } else {
+      props.onSearch(searchQuery);
+    }
+    }, [props.isShort])
+
   useEffect(() => {
     if (location.pathname === '/movies' && localStorage.getItem('moviesSearch')) {
       const searchInput = localStorage.getItem('moviesSearch');

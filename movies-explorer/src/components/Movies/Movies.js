@@ -38,7 +38,6 @@ function Movies(props) {
   //Получить фильмы от beatmovies и отфильтровать по запросу
   function getAndFilterBeatMovies(query) {
     localStorage.setItem('moviesSearch', query);//сохранить историю
-    // localStorage.clear();
     const allBeatMovies = JSON.parse(localStorage.getItem('allBeatMovies'));
     if (allBeatMovies) {
       handleFilterMovies(allBeatMovies, isShort, query);
@@ -48,30 +47,22 @@ function Movies(props) {
         .then((movies) => {
           handleFilterMovies(movies, isShort, query);
         })
-        .catch((err) => { 
+        .catch((err) => {
           if (err) {
             props.setInfotoolTipOpen(true);
             props.setIsSuccessMessage(false);
             props.setInfoMessage('Во время запроса произошла ошибка. Возможно,проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
           }
-         })
+        })
         .finally(() => { setIsMoviesLoading(false) })
     }
   };
 
-  //Изменять состояние чекбокса
+  //Изменять состояние чекбокса из истории
   useEffect(() => {
     const short = localStorage.getItem('short') === 'true';
     setIsShort(short);
   }, [])
-
-  //При изменениии чекбокса короткометражек заново фильтровать отфильтрованные фильмы
-  useEffect(() => {
-    const movies = JSON.parse(localStorage.getItem('filteredMovies'));
-    if (!movies) {return} else {
-    setBeatMovies(movies || []);
-    setFilteredMovies(isShort ? filterShortMovies(movies) : movies || [])}
-  }, [isShort])
 
   //Менять переменную состояния, если не найдены фильмы
   useEffect(() => {
