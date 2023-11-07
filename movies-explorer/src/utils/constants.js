@@ -8,4 +8,4 @@ export const addMoviesNumberTablet = 3;
 export const addMoviesNumberMiniTabletOrMobile = 2;
 
 export const userNameRegex = '/^[A-Za-zА-Яа-яЁё /s -]+$/';
-export const emailRegex = '^.+@.+\..+$';
+export const emailRegex = '[a-z0-9]+@[a-z]+\\.{1,1}[a-z]{2,}';

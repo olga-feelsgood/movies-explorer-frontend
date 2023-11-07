@@ -60,7 +60,7 @@ function Register(props) {
                 name='email'
                 autoComplete='on'
                 placeholder='E-mail'
-                patter={emailRegex}
+                pattern={emailRegex}
                 value={inputValues.email || ''}
                 onChange={handleChange}
               />
