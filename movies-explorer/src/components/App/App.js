@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
+import debounce from 'lodash.debounce';
 import Main from '../Main/Main.js';
 import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/Savedmovies.js';
@@ -28,6 +29,21 @@ function App() {
   const [infotoolTipOpen, setInfotoolTipOpen] = useState(false);//открыть/закрыть popup
   const [infoMessage, setInfoMessage] = useState('');//текст для popup
   const [isSuccessMessage, setIsSuccessMessage] = useState(false);//сообщение об ошибке или успехе
+
+  const [windowSize, setWindowSize] = useState(window.innerWidth);//ширина окна
+
+//отследить ширину окна
+const handleResize = debounce(() => {
+  setWindowSize(window.innerWidth);
+}, 1000);
+
+//установить слушатель событий на ширину окна
+useEffect(() => {
+  window.addEventListener('resize', handleResize);
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+},[handleResize])
 
   useEffect(() => {
     checkToken();
