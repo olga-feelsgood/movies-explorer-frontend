@@ -1,0 +1,13 @@
+export const INITIALMOVIESNUMBERDESKTOP = 16;
+export const INITIALMOVIESNUMBERTABLET = 9;
+export const INITIALMOVIESNUMBERMINITABLET = 8;
+export const INITIALMOVIESNUMBERMOBILE = 5;
+
+export const ADDMOVIESNUMBERDESKTOP = 4;
+export const ADDMOVIESNUMBERTABLET = 3;
+export const ADDMOVIESNUMBERMINITABLETORMOBILE = 2;
+
+export const USERNAMEREGEX = '^[A-Za-zА-Яа-яЁё /s -_]+$';
+export const EMAILREGEX = '[a-z0-9]+@[a-z]+\\.{1,1}[a-z]{2,}';
+
+export const SHORTMOVIESDURATIONINMINUTES = 40;

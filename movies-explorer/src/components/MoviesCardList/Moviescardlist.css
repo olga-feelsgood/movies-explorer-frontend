@@ -4,6 +4,13 @@
   padding: 70px 70px 65px;
 }
 
+.movies-cardlist__notfound {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
 .movies-cardlist__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));

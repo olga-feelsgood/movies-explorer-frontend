@@ -1,5 +1,11 @@
 Макет light-1
-
+pull-request
+https://github.com/olga-feelsgood/movies-explorer-frontend/pull/2
+Сайт
+https://movies-app.nomoredomainsicu.ru/
+Api
+http://api.movies-app.nomoredomainsmonster.ru/
+test
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

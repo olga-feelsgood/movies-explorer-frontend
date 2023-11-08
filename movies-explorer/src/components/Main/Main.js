@@ -8,10 +8,11 @@ import AboutMe from '../AboutMe/Aboutme.js';
 import Portfolio from '../Portfolio/Portfolio.js';
 import Header from '../Header/Header.js';
 
-function Main() {
+function Main(props) {
   return (
     <>
-      <Header />
+      <Header 
+      isLoggedIn={props.isLoggedIn}/>
       <main className='main'>
         <Promo />
         <NavTab />
