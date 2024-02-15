@@ -83,6 +83,7 @@
   transform: translateY(10px);
 }
 
+
 /* Крестик */
 
 .burger__wrapper .burger__button span:nth-child(1) {
@@ -160,12 +161,16 @@
     display: none;
   }
 
-  .burger__button {
-    visibility: visible;
+  .navigation__profile-button {
+    display: none;
   }
 
   .burger {
     display: flex;
+  }
+
+  .burger__button {
+    visibility: visible;
   }
 }
 

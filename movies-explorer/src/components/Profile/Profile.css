@@ -119,7 +119,6 @@
   color: #C2C2C2;
 }
 
-
 @media(max-width: 768px) {
   .profile__title {
     padding-top: 232px;
@@ -133,7 +132,6 @@
   .profile__input {
     width: 85%;
   }
-
 }
 
 @media(max-width: 450px) {

@@ -1,10 +1,10 @@
 import './Filtercheckbox.css';
 
-function FilterCheckBox() {
+function FilterCheckBox(props) {
   return (
     <>
-      <input type="checkbox" className="filter-checkbox" id="filter-checkbox_short-movie" />
-      <label for="filter-checkbox_short-movie">Короткометражки</label>
+      <input onChange={props.handleIsShort} checked={props.isShort} type="checkbox" className="filter-checkbox" id="filter-checkbox_short-movie" />
+      <label htmlFor="filter-checkbox_short-movie">Короткометражки</label>
     </>
   )
 }
